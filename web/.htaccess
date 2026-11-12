@@ -1,0 +1,72 @@
+# Cavalié Automotriz — reglas del servidor (Apache / Bluehost)
+# Fuente del mapa de redirecciones: auditoria/redirecciones.csv
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# 1) Todo a https y sin www (una sola redirección)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://cavalieautomotriz.com/$1 [R=301,L]
+
+# 2) Páginas del WordPress anterior -> páginas nuevas (301 permanentes)
+RewriteRule ^servicios/?$ / [R=301,L]
+RewriteRule ^nosotros/?$ /#nosotros [R=301,L,NE]
+RewriteRule ^trabajos/?$ / [R=301,L]
+RewriteRule ^conversiones-a-glp/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^conversiones-a-gas/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^conversiones-a-glp-5-puntos-importantes/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^category/conversiones-a-glp/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^tag/conversiones-a-gas-glp/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^filter/conversiones-a-gas/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^taller-mecanica-automotriz-2/?$ /mantenimiento-gasolina/ [R=301,L]
+RewriteRule ^diagnostico-mitos-y-verdades/?$ /mantenimiento-gasolina/ [R=301,L]
+RewriteRule ^category/taller-mecanica-automotriz/?$ /mantenimiento-gasolina/ [R=301,L]
+RewriteRule ^preguntas-frecuentes-(conversion-a-glp|taller-mecanica-automotriz|pintura-autos)/?$ /preguntas-frecuentes/ [R=301,L]
+RewriteRule ^gracias(-contacto)?/?$ /contacto/ [R=301,L]
+RewriteRule ^pintura-autos/?$ / [R=301,L]
+RewriteRule ^10-puntos-en-planchado-y-pintura/?$ / [R=301,L]
+RewriteRule ^category/pintura-autos/?$ / [R=301,L]
+RewriteRule ^tag/pintado-de-autos/?$ / [R=301,L]
+RewriteRule ^filter/pintura-autos/?$ / [R=301,L]
+RewriteRule ^(bienvenidos-al-blog|cavalie-blog|columns|home1-q)/?$ / [R=301,L]
+RewriteRule ^category/cavalie-automotriz/?$ / [R=301,L]
+RewriteRule ^author/cavalie/?$ / [R=301,L]
+RewriteRule ^feed/?$ / [R=301,L]
+RewriteRule ^wp-sitemap\.xml$ /sitemap.xml [R=301,L]
+RewriteRule ^(Portfolio|portfolio|faq)/ - [G,L]
+
+# 3) Landings de Google Ads anteriores (verificar anuncios activos antes de publicar)
+RewriteRule ^lp/glp/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^lp/taller(2020xxxxx)?/?$ /mantenimiento-gasolina/ [R=301,L]
+RewriteRule ^lp/pintura/?$ / [R=301,L]
+RewriteRule ^lp/?$ / [R=301,L]
+RewriteRule ^landing/conversion-glp\.html$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^calculadora/?$ /mantenimiento-glp/ [R=301,L]
+RewriteRule ^mailing/glp/?$ /mantenimiento-glp/ [R=301,L]
+</IfModule>
+
+# Caché del navegador para archivos estáticos
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+ExpiresByType text/html "access plus 10 minutes"
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain
+</IfModule>
+
+<IfModule mod_headers.c>
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

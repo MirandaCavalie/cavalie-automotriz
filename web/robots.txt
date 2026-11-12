@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cavalieautomotriz.com/sitemap.xml
