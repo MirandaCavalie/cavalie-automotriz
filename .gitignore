@@ -1,0 +1,15 @@
+# Auditoría y respaldos: contienen datos sensibles (rutas del servidor, IDs de Ads, hallazgos de seguridad)
+auditoria/
+backup/
+respaldos/
+*.sql
+*.sql.gz
+*.tar.gz
+
+# Material crudo descargado del sitio viejo (se usa solo lo optimizado en web/)
+assets-originales/
+
+# Sistema
+.DS_Store
+node_modules/
+.vercel/
