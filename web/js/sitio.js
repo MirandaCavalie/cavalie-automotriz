@@ -21,21 +21,13 @@
     }
   });
 
-  // Carrusel de reseñas: duplica las tarjetas para un recorrido continuo y permite pausarlo
+  // Carrusel de reseñas: duplica las tarjetas para un recorrido continuo (se detiene al pasar el mouse)
   var carrusel = document.getElementById('carrusel');
   if (carrusel) {
     var pista = carrusel.querySelector('.carrusel__pista');
     Array.prototype.slice.call(pista.children).forEach(function (r) {
       var copia = r.cloneNode(true); copia.setAttribute('aria-hidden', 'true'); pista.appendChild(copia);
     });
-    var pausa = document.querySelector('.carrusel__pausa');
-    if (pausa) {
-      pausa.addEventListener('click', function () {
-        var pausado = carrusel.classList.toggle('pausado');
-        pausa.setAttribute('aria-pressed', pausado ? 'true' : 'false');
-        pausa.textContent = pausado ? 'Reanudar reseñas' : 'Pausar reseñas';
-      });
-    }
   }
 
   // Formulario de cotización: arma el mensaje y abre WhatsApp (no se guarda nada en el servidor)
