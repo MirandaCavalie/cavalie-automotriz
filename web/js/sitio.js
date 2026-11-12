@@ -30,6 +30,17 @@
     });
   }
 
+  // Trabajos realizados: flechas que deslizan la fila una foto a la vez
+  var fila = document.getElementById('trabajos-fila');
+  if (fila) {
+    document.querySelectorAll('.flecha').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var paso = fila.querySelector('.trabajo').offsetWidth + 20;
+        fila.scrollBy({ left: paso * Number(b.getAttribute('data-dir')), behavior: 'smooth' });
+      });
+    });
+  }
+
   // Formulario de cotización: arma el mensaje y abre WhatsApp (no se guarda nada en el servidor)
   var form = document.getElementById('form-cotizar');
   if (form) {

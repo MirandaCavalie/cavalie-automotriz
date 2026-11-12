@@ -43,7 +43,9 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+[id] { scroll-margin-top: 88px; }  /* que la cabecera fija no tape el título al saltar a una sección */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
   font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -179,12 +181,21 @@ strong { font-weight: 600; }
 }
 @media (max-width: 900px) { .cajas { grid-template-columns: 1fr; } }
 
-/* Trabajos realizados */
-.trabajos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.trabajos figure { margin: 0; border-radius: 8px; overflow: hidden; }
-.trabajos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; transition: transform .4s ease; }
-.trabajos figure:hover img { transform: scale(1.03); }
-@media (max-width: 900px) { .trabajos { grid-template-columns: repeat(2, 1fr); } }
+/* Trabajos realizados: una fila que se desliza */
+.trabajos__cabecera { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; }
+.trabajos__cabecera h2 { margin: 0; }
+.trabajos__flechas { display: flex; gap: 8px; }
+.flecha { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--azul-800); background: transparent; color: var(--azul-800); display: grid; place-items: center; cursor: pointer; transition: background-color .2s, color .2s; }
+.flecha:hover { background: var(--azul-800); color: #fff; }
+.flecha svg { width: 20px; height: 20px; }
+.trabajos { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding: 0 max(var(--borde), calc((100vw - var(--ancho)) / 2 + var(--borde))); scroll-padding: 0 max(var(--borde), calc((100vw - var(--ancho)) / 2 + var(--borde))); }
+.trabajos::-webkit-scrollbar { display: none; }
+.trabajo { flex: 0 0 clamp(260px, 30vw, 380px); margin: 0; scroll-snap-align: start; }
+.trabajo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radio); }
+.trabajo figcaption { margin-top: 14px; font-size: .95rem; color: var(--suave); }
+.trabajo figcaption strong { display: block; color: var(--tinta); font-weight: 500; }
+@media (max-width: 640px) { .trabajos__flechas { display: none; } .trabajo { flex-basis: 78vw; } }
 
 /* Reseñas: carrusel continuo */
 .resenas__cabecera { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
