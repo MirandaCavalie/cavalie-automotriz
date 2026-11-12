@@ -24,14 +24,14 @@ DOMINIO = "https://cavalieautomotriz.com"
 PAGINAS = {
     "/": {
         "archivo": "inicio.html",
-        "titulo": "Mantenimiento GLP y gasolina en Lima | Cavalié Automotriz",
-        "descripcion": "Taller en Santa Beatriz, Lima, desde 1999. Mantenimiento de GLP y gasolina en un solo lugar: 50% de descuento en el GLP al hacer ambos. 4,8★ en Google. Cotiza por WhatsApp.",
+        "titulo": "Taller automotriz en Lima: mantenimiento GLP y gasolina | Cavalié",
+        "descripcion": "Taller automotriz y mecánico en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina en un solo lugar: 50% de descuento en el GLP al hacer ambos. 4,8★ en Google.",
         "portada": "hero-atencion",
         "prioridad": "1.0",
     },
     "/mantenimiento-glp/": {
         "archivo": "mantenimiento-glp.html",
-        "titulo": "Mantenimiento GLP en Lima | Cavalié Automotriz",
+        "titulo": "Mantenimiento GLP en Lima para autos duales | Cavalié",
         "nombre": "Mantenimiento GLP",
         "descripcion": "Mantenimiento de autos a GLP en Santa Beatriz, Lima: filtros, reductor, inyectores, fugas y calibración con software de la marca. Equipos BRC y Landi Renzo. 50% de descuento con el de gasolina.",
         "servicio": "Mantenimiento de sistema GLP",
@@ -39,9 +39,9 @@ PAGINAS = {
     },
     "/mantenimiento-gasolina/": {
         "archivo": "mantenimiento-gasolina.html",
-        "titulo": "Mantenimiento de autos a gasolina en Lima | Cavalié",
+        "titulo": "Taller mecánico en Lima: mecánica general y mantenimiento | Cavalié",
         "nombre": "Mantenimiento gasolina",
-        "descripcion": "Mantenimiento preventivo según el fabricante, diagnóstico computarizado, frenos, suspensión, dirección y motor. Taller multimarca en Santa Beatriz, Lima, desde 1999.",
+        "descripcion": "Taller mecánico multimarca en Santa Beatriz, Lima: mantenimiento preventivo, mecánica general, electrónica automotriz, frenos, suspensión y motor. Desde 1999.",
         "servicio": "Mantenimiento de autos a gasolina y mecánica general",
         "prioridad": "0.9",
     },
