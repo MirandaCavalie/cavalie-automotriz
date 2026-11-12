@@ -238,6 +238,13 @@ p { margin: 0 0 1em; }
 .galeria img { border-radius: 12px; aspect-ratio: 4/3; object-fit: cover; width: 100%; }
 @media (max-width: 640px) { .galeria { grid-template-columns: 1fr 1fr; } }
 
+/* Trabajos realizados */
+.trabajos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.trabajos figure { margin: 0; }
+.trabajos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; }
+.trabajos figcaption { font-size: .9rem; color: var(--texto-suave); margin-top: 8px; }
+@media (max-width: 900px) { .trabajos { grid-template-columns: repeat(2, 1fr); } }
+
 /* Llamado final */
 .llamado { background: var(--verde-oscuro); color: #fff; text-align: center; padding: 56px 0; }
 .llamado h2 { color: #fff; }
