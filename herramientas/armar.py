@@ -25,15 +25,15 @@ PAGINAS = {
     "/": {
         "archivo": "inicio.html",
         "titulo": "Taller automotriz en Lima: mantenimiento GLP y gasolina | Cavalié",
-        "descripcion": "Taller automotriz y mecánico en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina en un solo lugar: 50% de descuento en el GLP al hacer ambos. 4,8★ en Google.",
-        "portada": "portada",
+        "descripcion": "Taller automotriz y mecánico en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina en un solo lugar, todas las marcas. 4,8★ en Google.",
+        "portada": "hero-atencion",
         "prioridad": "1.0",
     },
     "/mantenimiento-glp/": {
         "archivo": "mantenimiento-glp.html",
         "titulo": "Mantenimiento GLP en Lima para autos duales | Cavalié",
         "nombre": "Mantenimiento GLP",
-        "descripcion": "Mantenimiento de autos a GLP en Santa Beatriz, Lima: filtros, reductor, inyectores, fugas y calibración con software de la marca. Equipos BRC y Landi Renzo. 50% de descuento con el de gasolina.",
+        "descripcion": "Mantenimiento de autos a GLP en Santa Beatriz, Lima: filtros, reductor, inyectores, fugas y calibración con software de la marca. Especialistas en equipos BRC y Landi Renzo.",
         "servicio": "Mantenimiento de sistema GLP",
         "prioridad": "0.9",
     },
@@ -138,8 +138,8 @@ def armar(publicar=False):
         precarga = ""
         if p.get("portada"):
             n = p["portada"]
-            precarga = (f'\n  <link rel="preload" as="image" href="/img/{n}-720.webp" '
-                        f'imagesrcset="/img/{n}-480.webp 480w, /img/{n}-720.webp 720w" imagesizes="(max-width: 900px) 100vw, 50vw">')
+            precarga = (f'\n  <link rel="preload" as="image" href="/img/{n}-1520.webp" '
+                        f'imagesrcset="/img/{n}-800.webp 800w, /img/{n}-1520.webp 1520w" imagesizes="100vw">')
 
         html = (plantilla
                 .replace("{{titulo}}", p["titulo"])

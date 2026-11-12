@@ -1,24 +1,29 @@
-    <!-- Portada -->
-    <section class="portada">
-      <div class="contenedor portada__fila">
-        <div>
-          <h1>Taller automotriz en Santa Beatriz, Lima</h1>
-          <p class="portada__texto">Mantenimiento de autos a GLP y gasolina en el mismo taller. Si haces los dos, <strong>el mantenimiento GLP va con 50% de descuento</strong>.</p>
-          <div class="portada__acciones">
-            <a class="boton boton--whatsapp" data-ubicacion="portada" href="https://wa.me/51983745377?text=Hola%2C%20quiero%20cotizar%20el%20mantenimiento%20GLP%20%2B%20gasolina" target="_blank" rel="noopener">
+    <!-- Portada: foto a sangre -->
+    <section class="hero">
+      <img class="hero__foto" src="/img/hero-atencion-1520.webp" srcset="/img/hero-atencion-800.webp 800w, /img/hero-atencion-1520.webp 1520w" sizes="100vw" alt="Técnico de Cavalié conversando con un cliente al recibir su auto en el taller" width="1520" height="700" fetchpriority="high">
+      <div class="contenedor hero__contenido">
+        <p class="hero__frase">Transparencia en cada servicio</p>
+        <h1>Taller automotriz en Santa Beatriz, Lima</h1>
+        <p class="hero__texto">Mantenimiento y mecánica para autos a gasolina y a GLP. Te explicamos qué tiene tu auto y te damos el presupuesto antes de empezar.</p>
+        <div class="hero__acciones">
+          <a class="boton boton--whatsapp" data-ubicacion="portada" href="https://wa.me/51983745377?text=Hola%2C%20quiero%20cotizar%20un%20mantenimiento" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3C2.1 6.4 6.5 2 12 2c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.9-9.9 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
               Cotizar por WhatsApp
-            </a>
-            <a class="boton boton--contorno" href="#ubicacion">Ver cómo llegar</a>
-          </div>
-          <a class="calificacion" href="https://maps.google.com/?cid=8464895575291937233" target="_blank" rel="noopener">
-            <span class="estrellas" aria-hidden="true">★★★★★</span>
-            <span>4,8 en Google · más de 500 reseñas</span>
           </a>
+          <a class="boton boton--transparente" href="#ubicacion">Ver cómo llegar</a>
         </div>
-        <figure class="portada__foto">
-          <img src="/img/portada-720.webp" srcset="/img/portada-480.webp 480w, /img/portada-720.webp 720w" sizes="(max-width: 900px) 100vw, 50vw" alt="Técnico de Cavalié entregando la orden de servicio a una clienta" width="720" height="660" fetchpriority="high">
-        </figure>
+      </div>
+    </section>
+
+    <!-- Cifras -->
+    <section class="cifras">
+      <div class="contenedor cifras__fila">
+        <p class="cifras__texto">Taller familiar y multimarca. Atendemos autos a gasolina y a GLP de todas las marcas, con el mismo trato desde el primer día.</p>
+        <dl class="cifras__datos">
+          <div><dt>+25 años</dt><dd>en Santa Beatriz, desde 1999</dd></div>
+          <div><dt>4,8 <span aria-hidden="true">★</span></dt><dd>de calificación en Google</dd></div>
+          <div><dt>+500</dt><dd><a href="https://maps.google.com/?cid=8464895575291937233" target="_blank" rel="noopener">reseñas de clientes</a></dd></div>
+        </dl>
       </div>
     </section>
 
@@ -43,35 +48,28 @@
       <div class="contenedor">
         <h2>Qué hacemos en el taller</h2>
         <p class="seccion__intro">Taller mecánico multimarca: atendemos todas las marcas de autos y de equipos de GLP.</p>
-        <div class="servicios">
-          <div class="servicio">
+        <div class="cajas">
+          <a class="caja" href="/mantenimiento-glp/">
+            <img src="/img/glp-inyectores-600.webp" alt="" width="600" height="450" loading="lazy">
+            <span class="caja__numero">01</span>
             <h3>Mantenimiento GLP</h3>
             <p>Filtros, reductor, inyectores, prueba de fugas y calibración del sistema a gas con el software del equipo. Cada 20 000 km o una vez al año.</p>
-            <a class="enlace" href="/mantenimiento-glp/">Mantenimiento GLP</a>
-          </div>
-          <div class="servicio">
+            <span class="caja__enlace">Ver mantenimiento GLP</span>
+          </a>
+          <a class="caja" href="/mantenimiento-gasolina/">
+            <img src="/img/taller-464.webp" alt="" width="464" height="464" loading="lazy">
+            <span class="caja__numero">02</span>
             <h3>Mantenimiento y mecánica general</h3>
             <p>El mantenimiento que indica el fabricante de tu auto: aceite, filtros, frenos, suspensión, dirección y motor, con historial de cada visita.</p>
-            <a class="enlace" href="/mantenimiento-gasolina/">Mecánica general</a>
-          </div>
-          <div class="servicio">
-            <h3>Electrónica automotriz y diagnóstico</h3>
+            <span class="caja__enlace">Ver mecánica general</span>
+          </a>
+          <a class="caja" href="/contacto/">
+            <img src="/img/diagnostico-700.webp" alt="" width="700" height="322" loading="lazy">
+            <span class="caja__numero">03</span>
+            <h3>Electrónica y diagnóstico</h3>
             <p>Escáner, osciloscopio y analizador de gases para encontrar la falla del sistema de gasolina o de GLP antes de cambiar piezas.</p>
-            <a class="enlace" href="/contacto/">Agendar un diagnóstico</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Oferta -->
-    <section class="seccion oferta" id="oferta">
-      <div class="contenedor">
-        <div class="oferta__numero" aria-hidden="true">50<span>%</span></div>
-        <div>
-          <h2>Gasolina y GLP en una sola visita</h2>
-          <p>Un auto dual tiene dos sistemas y la mayoría de talleres atiende uno. Haz los dos mantenimientos en Cavalié y el de GLP te cuesta la mitad.</p>
-          <a class="boton boton--claro" data-ubicacion="oferta" href="https://wa.me/51983745377?text=Hola%2C%20quiero%20la%20promoci%C3%B3n%20de%2050%25%20en%20GLP%20%2B%20gasolina" target="_blank" rel="noopener">Pedir la promoción</a>
-          <p class="oferta__condiciones">Descuento sobre el mantenimiento GLP al hacer el de gasolina en la misma visita. <span class="pendiente">[Confirmar condiciones y vigencia]</span></p>
+            <span class="caja__enlace">Agendar un diagnóstico</span>
+          </a>
         </div>
       </div>
     </section>
@@ -148,10 +146,6 @@
             <p>Cada 20 000 km, que para un conductor promedio es más o menos una vez al año. En la revisión te confirmamos el intervalo exacto para tu equipo.</p>
           </details>
           <details>
-            <summary>¿Cómo funciona el 50% de descuento?</summary>
-            <p>Si haces el mantenimiento de gasolina y el de GLP en la misma visita, el mantenimiento GLP tiene 50% de descuento.</p>
-          </details>
-          <details>
             <summary>¿Atienden todas las marcas?</summary>
             <p>Sí. Somos un taller multimarca y trabajamos con todos los equipos de GLP, especialmente BRC y Landi Renzo.</p>
           </details>
@@ -160,6 +154,16 @@
             <p>Depende del auto y de lo que encontremos en la revisión. Al agendar por WhatsApp te confirmamos cuánto tiempo necesitamos tu auto.</p>
           </details>
           <p style="margin-top:28px"><a class="enlace" href="/preguntas-frecuentes/">Todas las preguntas frecuentes</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clientes corporativos -->
+    <section class="clientes" aria-labelledby="clientes-titulo">
+      <div class="contenedor">
+        <h2 id="clientes-titulo">Empresas que confían en Cavalié</h2>
+        <div class="clientes__logos">
+          <span class="pendiente">[Logos de clientes corporativos: por recibir]</span>
         </div>
       </div>
     </section>
@@ -181,7 +185,6 @@
             <label for="servicio">Servicio</label>
             <select id="servicio" name="servicio" required>
               <option value="">Elige un servicio</option>
-              <option>Mantenimiento GLP + gasolina (50% en GLP)</option>
               <option>Mantenimiento de GLP</option>
               <option>Mantenimiento de gasolina</option>
               <option>Diagnóstico del sistema GLP</option>
