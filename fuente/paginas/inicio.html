@@ -1,173 +1,134 @@
     <!-- Portada -->
     <section class="portada">
-      <picture class="portada__foto">
-        <img src="/img/hero-atencion-1520.webp" srcset="/img/hero-atencion-800.webp 800w, /img/hero-atencion-1520.webp 1520w" sizes="100vw" alt="Técnico de Cavalié atendiendo a una clienta en su auto" width="1520" height="700" fetchpriority="high">
-      </picture>
-      <div class="contenedor">
-        <div class="portada__contenido">
-          <h1>Taller automotriz en Lima: GLP y gasolina en un solo lugar</h1>
-          <p class="portada__texto">Taller mecánico multimarca en Santa Beatriz desde 1999. Tu auto dual necesita los dos mantenimientos: los hacemos juntos y <strong>te damos 50% de descuento en el mantenimiento GLP</strong> cuando haces también el de gasolina.</p>
+      <div class="contenedor portada__fila">
+        <div>
+          <h1>Taller automotriz en Santa Beatriz, Lima</h1>
+          <p class="portada__texto">Mantenimiento de autos a GLP y gasolina en el mismo taller. Si haces los dos, <strong>el mantenimiento GLP va con 50% de descuento</strong>.</p>
           <div class="portada__acciones">
             <a class="boton boton--whatsapp" data-ubicacion="portada" href="https://wa.me/51983745377?text=Hola%2C%20quiero%20cotizar%20el%20mantenimiento%20GLP%20%2B%20gasolina" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3C2.1 6.4 6.5 2 12 2c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.9-9.9 9.9zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.2c-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>
               Cotizar por WhatsApp
             </a>
-            <a class="boton boton--claro" href="#ubicacion">Cómo llegar</a>
+            <a class="boton boton--contorno" href="#ubicacion">Ver cómo llegar</a>
           </div>
           <a class="calificacion" href="https://maps.google.com/?cid=8464895575291937233" target="_blank" rel="noopener">
             <span class="estrellas" aria-hidden="true">★★★★★</span>
-            <span><strong>4,8</strong> en Google · más de 570 reseñas</span>
+            <span>4,8 en Google · más de 500 reseñas</span>
           </a>
         </div>
+        <figure class="portada__foto">
+          <img src="/img/portada-720.webp" srcset="/img/portada-480.webp 480w, /img/portada-720.webp 720w" sizes="(max-width: 900px) 100vw, 50vw" alt="Técnico de Cavalié entregando la orden de servicio a una clienta" width="720" height="660" fetchpriority="high">
+        </figure>
       </div>
     </section>
 
-    <!-- Franja de confianza -->
-    <section class="confianza" aria-label="Por qué confiar en Cavalié">
-      <div class="contenedor">
-        <ul>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>27 años de experiencia</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Taller autorizado por el MTC</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>Especialistas en BRC y Landi Renzo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 11l3-3 2 2 4-4"/></svg>Diagnóstico computarizado</li>
-        </ul>
+    <!-- Historia -->
+    <section class="seccion seccion--blanca" id="nosotros">
+      <div class="contenedor historia">
+        <figure>
+          <img src="/img/equipo-1000.webp" srcset="/img/equipo-600.webp 600w, /img/equipo-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 55vw" alt="Domingo Cavalié con el equipo de técnicos del taller" width="1000" height="592" loading="lazy">
+        </figure>
+        <div class="historia__texto">
+          <h2>Hola, soy Domingo Cavalié</h2>
+          <p>Los autos me gustaron desde siempre. Trabajé años en empresas del rubro y vi lo que faltaba en los concesionarios: tiempo para explicarle al cliente qué tiene su auto y un precio razonable por arreglarlo.</p>
+          <p>En 1999 abrí este taller en Santa Beatriz para hacerlo distinto. Hoy somos un equipo de técnicos que atiende autos a gasolina y a GLP, y muchos clientes nos confían sus autos desde hace años.</p>
+          <p>Antes de tocar tu auto te damos un presupuesto, y tú eliges entre repuestos originales o alternativos.</p>
+          <p class="historia__firma">Domingo Cavalié, fundador</p>
+        </div>
       </div>
     </section>
 
     <!-- Servicios -->
     <section class="seccion" id="servicios">
       <div class="contenedor">
-        <h2>Mecánica general y mantenimiento, en una sola visita</h2>
-        <p class="seccion__intro">Trabajamos con todas las marcas de autos y de equipos de GLP. Antes de empezar te damos un presupuesto y solo trabajamos con tu aprobación.</p>
-        <div class="rejilla">
-          <article class="tarjeta">
-            <img src="/img/glp-brc-500.webp" alt="Técnico revisando un equipo de GLP BRC" width="500" height="500" loading="lazy">
-            <div class="tarjeta__cuerpo">
-              <h3>Mantenimiento GLP</h3>
-              <p>Cambio de filtros, revisión del reductor, inyectores, fugas y calibración de tu sistema a gas, con equipos de diagnóstico de la marca.</p>
-              <a class="tarjeta__enlace" href="/mantenimiento-glp/">Ver mantenimiento GLP →</a>
-            </div>
-          </article>
-          <article class="tarjeta">
-            <img src="/img/taller-464.webp" alt="Vista del taller de Cavalié con autos en mantenimiento" width="464" height="464" loading="lazy">
-            <div class="tarjeta__cuerpo">
-              <h3>Mantenimiento gasolina</h3>
-              <p>Mantenimiento preventivo según el fabricante: aceite y filtros, bujías, frenos, suspensión y más, con historial de cada servicio.</p>
-              <a class="tarjeta__enlace" href="/mantenimiento-gasolina/">Ver mantenimiento gasolina →</a>
-            </div>
-          </article>
-          <article class="tarjeta">
-            <img src="/img/diagnostico-700.webp" alt="Técnicos de Cavalié trabajando en el sistema de un vehículo" width="700" height="322" loading="lazy">
-            <div class="tarjeta__cuerpo">
-              <h3>Electrónica automotriz y diagnóstico</h3>
-              <p>Diagnóstico computarizado del sistema de gasolina y de GLP: escáner, análisis de gases e inyección electrónica.</p>
-              <a class="tarjeta__enlace" href="/contacto/">Agendar diagnóstico →</a>
-            </div>
-          </article>
+        <h2>Qué hacemos en el taller</h2>
+        <p class="seccion__intro">Taller mecánico multimarca: atendemos todas las marcas de autos y de equipos de GLP.</p>
+        <div class="servicios">
+          <div class="servicio">
+            <h3>Mantenimiento GLP</h3>
+            <p>Filtros, reductor, inyectores, prueba de fugas y calibración del sistema a gas con el software del equipo. Cada 20 000 km o una vez al año.</p>
+            <a class="enlace" href="/mantenimiento-glp/">Mantenimiento GLP</a>
+          </div>
+          <div class="servicio">
+            <h3>Mantenimiento y mecánica general</h3>
+            <p>El mantenimiento que indica el fabricante de tu auto: aceite, filtros, frenos, suspensión, dirección y motor, con historial de cada visita.</p>
+            <a class="enlace" href="/mantenimiento-gasolina/">Mecánica general</a>
+          </div>
+          <div class="servicio">
+            <h3>Electrónica automotriz y diagnóstico</h3>
+            <p>Escáner, osciloscopio y analizador de gases para encontrar la falla del sistema de gasolina o de GLP antes de cambiar piezas.</p>
+            <a class="enlace" href="/contacto/">Agendar un diagnóstico</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Oferta -->
-    <section class="seccion seccion--alt" id="oferta">
+    <section class="seccion oferta" id="oferta">
       <div class="contenedor">
-        <div class="oferta">
-          <div>
-            <h2>Un solo taller para tu auto a gas</h2>
-            <p>Un auto a GLP tiene dos sistemas: el de gasolina y el de gas. La mayoría de talleres solo atiende uno, y terminas yendo a dos lugares. En Cavalié hacemos los dos mantenimientos en la misma visita.</p>
-            <p class="oferta__condiciones">Condiciones: descuento sobre el mantenimiento GLP al hacer el mantenimiento de gasolina en la misma visita. <span class="pendiente">[Confirmar condiciones y vigencia]</span></p>
-          </div>
-          <div class="oferta__sello">
-            <div class="oferta__porcentaje">50%</div>
-            <p>de descuento en el mantenimiento GLP<br>al hacer también el de gasolina</p>
-            <a class="boton boton--whatsapp boton--bloque" data-ubicacion="oferta" href="https://wa.me/51983745377?text=Hola%2C%20quiero%20la%20promoci%C3%B3n%20de%2050%25%20en%20GLP%20%2B%20gasolina" target="_blank" rel="noopener">Quiero la promoción</a>
-          </div>
+        <div class="oferta__numero" aria-hidden="true">50%</div>
+        <div>
+          <h2>Gasolina y GLP en una sola visita</h2>
+          <p>Un auto dual tiene dos sistemas y la mayoría de talleres atiende uno. Haz los dos mantenimientos en Cavalié y el de GLP te cuesta la mitad.</p>
+          <a class="boton boton--claro" data-ubicacion="oferta" href="https://wa.me/51983745377?text=Hola%2C%20quiero%20la%20promoci%C3%B3n%20de%2050%25%20en%20GLP%20%2B%20gasolina" target="_blank" rel="noopener">Pedir la promoción</a>
+          <p class="oferta__condiciones">Descuento sobre el mantenimiento GLP al hacer el de gasolina en la misma visita. <span class="pendiente">[Confirmar condiciones y vigencia]</span></p>
         </div>
-      </div>
-    </section>
-
-    <!-- Cómo trabajamos -->
-    <section class="seccion">
-      <div class="contenedor">
-        <h2>Sin sorpresas en la factura</h2>
-        <p class="seccion__intro">Así es una visita a Cavalié, de la cotización a la entrega.</p>
-        <ol class="pasos">
-          <li><h3>Cotizas por WhatsApp</h3><p>Nos cuentas el modelo, el año y qué necesitas. Te respondemos y agendamos tu visita.</p></li>
-          <li><h3>Diagnóstico y presupuesto</h3><p>Revisamos el auto y te damos un presupuesto. El trabajo empieza solo con tu aprobación.</p></li>
-          <li><h3>Tú eliges los repuestos</h3><p>Originales o alternativos de calidad, según tu presupuesto. Te explicamos la diferencia.</p></li>
-          <li><h3>Entrega con historial</h3><p>Te devolvemos el auto listo y guardamos el historial de cada servicio para el próximo.</p></li>
-        </ol>
       </div>
     </section>
 
     <!-- Trabajos realizados -->
-    <section class="seccion" id="trabajos">
+    <section class="seccion seccion--blanca" id="trabajos">
       <div class="contenedor">
         <h2>Trabajos realizados en Cavalié</h2>
-        <p class="seccion__intro">Algunos autos que pasaron por nuestro taller. Cada sistema de GLP se instala y mantiene con el cableado protegido, empalmes soldados y componentes de marca.</p>
+        <p class="seccion__intro">Autos que pasaron por el taller. En cada sistema de GLP el cableado va protegido y los empalmes, soldados.</p>
         <div class="trabajos">
-          <figure><img src="/img/trabajos/kia-cerato-motor.webp" alt="Kia Cerato con sistema de GLP en el taller de Cavalié" width="800" height="600" loading="lazy"><figcaption>Kia Cerato · sistema GLP</figcaption></figure>
-          <figure><img src="/img/trabajos/kia-cerato-tanque.webp" alt="Tanque toroidal de GLP en la maletera de un Kia Cerato" width="800" height="600" loading="lazy"><figcaption>Kia Cerato · tanque toroidal</figcaption></figure>
-          <figure><img src="/img/trabajos/hyundai-elantra-motor.webp" alt="Hyundai Elantra con el capó abierto en el taller" width="800" height="600" loading="lazy"><figcaption>Hyundai Elantra · sistema GLP</figcaption></figure>
-          <figure><img src="/img/trabajos/toyota-rav4-motor.webp" alt="Motor de Toyota RAV4 con inyectores de GLP" width="800" height="600" loading="lazy"><figcaption>Toyota RAV4 · inyectores GLP</figcaption></figure>
-          <figure><img src="/img/trabajos/kia-sorento-inyectores.webp" alt="Riel de inyectores de GLP en un Kia Sorento" width="800" height="600" loading="lazy"><figcaption>Kia Sorento · riel de inyectores</figcaption></figure>
-          <figure><img src="/img/trabajos/kia-sportage-tanque.webp" alt="Tanque de GLP en la maletera de un Kia Sportage" width="800" height="600" loading="lazy"><figcaption>Kia Sportage · tanque GLP</figcaption></figure>
-          <figure><img src="/img/trabajos/kia-carens-reductor.webp" alt="Reductor vaporizador de GLP instalado en un Kia Carens" width="800" height="600" loading="lazy"><figcaption>Kia Carens · reductor</figcaption></figure>
-          <figure><img src="/img/trabajos/kia-sportage-motor.webp" alt="Kia Sportage con el capó abierto en el taller de Cavalié" width="800" height="600" loading="lazy"><figcaption>Kia Sportage · mantenimiento</figcaption></figure>
+          <figure><img src="/img/trabajos/kia-cerato-motor.webp" alt="Kia Cerato con sistema de GLP en el taller de Cavalié" width="800" height="600" loading="lazy"></figure>
+          <figure><img src="/img/trabajos/kia-cerato-tanque.webp" alt="Tanque toroidal de GLP en la maletera de un Kia Cerato" width="800" height="600" loading="lazy"></figure>
+          <figure><img src="/img/trabajos/hyundai-elantra-motor.webp" alt="Hyundai Elantra con el capó abierto en el taller" width="800" height="600" loading="lazy"></figure>
+          <figure><img src="/img/trabajos/toyota-rav4-motor.webp" alt="Motor de Toyota RAV4 con inyectores de GLP" width="800" height="600" loading="lazy"></figure>
+          <figure><img src="/img/trabajos/kia-sorento-inyectores.webp" alt="Riel de inyectores de GLP en un Kia Sorento" width="800" height="600" loading="lazy"></figure>
+          <figure><img src="/img/trabajos/kia-sportage-tanque.webp" alt="Tanque de GLP en la maletera de un Kia Sportage" width="800" height="600" loading="lazy"></figure>
+          <figure><img src="/img/trabajos/kia-carens-reductor.webp" alt="Reductor vaporizador de GLP instalado en un Kia Carens" width="800" height="600" loading="lazy"></figure>
+          <figure><img src="/img/trabajos/kia-sportage-motor.webp" alt="Kia Sportage con el capó abierto en el taller de Cavalié" width="800" height="600" loading="lazy"></figure>
         </div>
       </div>
     </section>
 
-    <!-- Nosotros -->
-    <section class="seccion seccion--alt" id="nosotros">
-      <div class="contenedor dos-columnas">
-        <img src="/img/equipo-1000.webp" srcset="/img/equipo-600.webp 600w, /img/equipo-1000.webp 1000w" sizes="(max-width: 800px) 100vw, 50vw" alt="Equipo de técnicos de Cavalié Automotriz en el taller" width="1000" height="592" loading="lazy">
-        <div>
-          <h2>La alternativa al concesionario, desde 1999</h2>
-          <p>Cavalié Automotriz nació en 1999 para ofrecer el mismo estándar técnico del concesionario, con trato personal y precios razonables. Hoy somos un equipo de técnicos especializados en autos a gasolina y GLP, liderado por Domingo Cavalié.</p>
-          <ul class="lista-check">
-            <li>Taller multimarca autorizado por el MTC</li>
-            <li>Especialistas en equipos de GLP BRC y Landi Renzo</li>
-            <li>Escáneres, osciloscopios y analizador de gases</li>
-            <li>Software original de las marcas que atendemos</li>
-          </ul>
-          <a class="boton boton--contorno" href="/contacto/">Visítanos</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section class="seccion">
+    <!-- Reseñas de Google -->
+    <section class="seccion" id="resenas">
       <div class="contenedor">
-        <h2>4,8 estrellas en más de 570 reseñas de Google</h2>
-        <p class="seccion__intro">Algunos clientes que nos confían sus autos desde hace años. <a href="https://maps.google.com/?cid=8464895575291937233" target="_blank" rel="noopener">Lee todas las reseñas en Google</a>.</p>
-        <div class="rejilla">
-          <figure class="testimonio">
-            <blockquote>“Un amigo me recomendó Cavalié y aún le estoy agradecido. Desde mi primera visita recibí un excelente trato y un servicio técnico impecable. Desde entonces les llevo mis autos.”</blockquote>
-            <figcaption>Víctor Arteaga Ferrando<span>Cliente desde hace varios años</span></figcaption>
-          </figure>
-          <figure class="testimonio">
-            <blockquote>“Un taller muy personalizado. Si tengo que resaltar dos virtudes: cumplimiento y seriedad. Trabajamos más de 6 años con ellos y no lo cambiaría por otra opción.”</blockquote>
-            <figcaption>Hernán Carranza<span>Cliente corporativo</span></figcaption>
-          </figure>
-          <figure class="testimonio">
-            <blockquote>“Un servicio automotriz de garantía: honesto, puntual, personalizado y económico. Estoy seguro de que todos los clientes compartimos esta opinión.”</blockquote>
-            <figcaption>Federico Gálvez<span>Cliente</span></figcaption>
-          </figure>
+        <div class="resenas__cabecera">
+          <div>
+            <h2>Lo que dicen en Google</h2>
+            <div class="resenas__nota"><strong>4,8</strong><span class="estrellas" aria-hidden="true">★★★★★</span><span>más de 500 reseñas</span></div>
+          </div>
+          <a class="boton boton--contorno" href="https://maps.google.com/?cid=8464895575291937233" target="_blank" rel="noopener">Leer las reseñas en Google Maps</a>
         </div>
+      </div>
+      <div class="carrusel" id="carrusel" aria-label="Reseñas de clientes en Google">
+        <div class="carrusel__pista">
+          <figure class="resena"><span class="estrellas" aria-label="5 estrellas">★★★★★</span><blockquote>“Muy buen servicio. Llevé mi Nissan Kicks por un sonido que presentaba al acelerar y me dieron un buen diagnóstico. Me entregaron el carro al día siguiente y quedó todo solucionado.”</blockquote><figcaption>Adriana G. · reseña en Google</figcaption></figure>
+          <figure class="resena"><span class="estrellas" aria-label="5 estrellas">★★★★★</span><blockquote>“Llevé mi vehículo al taller por un problema de pérdida de fuerza. Diagnosticaron la falla de manera precisa y me explicaron con claridad lo que debían realizar. ¡El trabajo quedó listo el mismo día!”</blockquote><figcaption>Joel A. · reseña en Google</figcaption></figure>
+          <figure class="resena"><span class="estrellas" aria-label="5 estrellas">★★★★★</span><blockquote>“Explican el detalle técnico a consultas. He visitado muchos talleres, pero este taller es uno de los mejores que personalmente me agradaron.”</blockquote><figcaption>Roger A. · reseña en Google</figcaption></figure>
+          <figure class="resena"><span class="estrellas" aria-label="5 estrellas">★★★★★</span><blockquote>“Excelente servicio, me explicaron super bien lo que tenía mi carro y lo dejaron super bien y con buenos precios.”</blockquote><figcaption>Carla Q. · reseña en Google</figcaption></figure>
+          <figure class="resena"><span class="estrellas" aria-label="5 estrellas">★★★★★</span><blockquote>“Buena atención de todo el personal, tanto administrativo como los del taller. Me parece algo muy bueno que el jefe de taller te haga conocer en forma personal el trabajo realizado.”</blockquote><figcaption>José Z. · reseña en Google</figcaption></figure>
+        </div>
+      </div>
+      <div class="contenedor">
+        <button class="carrusel__pausa" type="button" aria-controls="carrusel" aria-pressed="false">Pausar reseñas</button>
       </div>
     </section>
 
     <!-- Ubicación -->
-    <section class="seccion seccion--alt" id="ubicacion">
+    <section class="seccion seccion--blanca" id="ubicacion">
       <div class="contenedor ubicacion">
-        <div class="ubicacion__datos">
-          <h2>Visítanos en Santa Beatriz</h2>
+        <div>
+          <h2>Cómo llegar al taller</h2>
           <dl>
             <dt>Dirección</dt>
-            <dd>Jr. José Gálvez 1469, Santa Beatriz, Cercado de Lima 15046</dd>
+            <dd>Jr. José Gálvez 1469, Santa Beatriz, Cercado de Lima</dd>
             <dt>Horario</dt>
-            <dd>Lunes a viernes: 8:15 a. m. – 1:00 p. m. y 2:00 – 5:50 p. m.<br>Sábados: 8:15 a. m. – 1:00 p. m.<br>Domingos: cerrado</dd>
+            <dd>Lunes a viernes, 8:15 a. m. – 1:00 p. m. y 2:00 – 5:50 p. m.<br>Sábados, 8:15 a. m. – 1:00 p. m.</dd>
             <dt>WhatsApp y teléfono</dt>
             <dd><a href="tel:+51983745377">983 745 377</a></dd>
           </dl>
@@ -182,12 +143,9 @@
 
     <!-- Preguntas frecuentes -->
     <section class="seccion" id="preguntas">
-      <div class="contenedor dos-columnas" style="align-items:start">
-        <div>
-          <h2>Lo que más nos preguntan</h2>
-          <p class="seccion__intro">¿Tienes otra duda? Escríbenos por WhatsApp o mira <a href="/preguntas-frecuentes/">todas las preguntas frecuentes</a>.</p>
-        </div>
+      <div class="contenedor">
         <div class="faq">
+          <h2>Preguntas frecuentes</h2>
           <details>
             <summary>¿Cada cuánto debo hacer el mantenimiento del GLP?</summary>
             <p>Cada 20 000 km, que para un conductor promedio es más o menos una vez al año. En la revisión te confirmamos el intervalo exacto para tu equipo.</p>
@@ -204,32 +162,28 @@
             <summary>¿Cuánto demora el mantenimiento?</summary>
             <p>Depende del auto y de lo que encontremos en la revisión. Al agendar por WhatsApp te confirmamos cuánto tiempo necesitamos tu auto.</p>
           </details>
+          <p style="margin-top:28px"><a class="enlace" href="/preguntas-frecuentes/">Todas las preguntas frecuentes</a></p>
         </div>
       </div>
     </section>
 
     <!-- Cotizar -->
-    <section class="seccion seccion--alt" id="cotizar">
-      <div class="contenedor dos-columnas" style="align-items:start">
+    <section class="seccion seccion--blanca" id="cotizar">
+      <div class="contenedor dos-columnas">
         <div>
-          <h2>Pide tu cotización por WhatsApp</h2>
-          <p>Completa los datos y se abrirá WhatsApp con tu mensaje listo para enviar. Te respondemos en horario de atención.</p>
-          <ul class="lista-check">
-            <li>Sin compromiso</li>
-            <li>Presupuesto antes de empezar</li>
-            <li>GLP y gasolina en la misma visita</li>
-          </ul>
+          <h2>Cotiza por WhatsApp</h2>
+          <p class="seccion__intro">Completa los datos y se abre WhatsApp con el mensaje listo para enviar. Respondemos en el horario del taller.</p>
         </div>
         <form id="form-cotizar" class="formulario">
           <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" autocomplete="name" required></div>
           <div class="campos-dobles">
-            <div class="campo"><label for="vehiculo">Marca, modelo y año</label><input id="vehiculo" name="vehiculo" placeholder="Ej.: Kia Rio 2019" required></div>
-            <div class="campo"><label for="placa">Placa</label><input id="placa" name="placa" placeholder="Ej.: ABC-123" required></div>
+            <div class="campo"><label for="vehiculo">Marca, modelo y año</label><input id="vehiculo" name="vehiculo" placeholder="Kia Rio 2019" required></div>
+            <div class="campo"><label for="placa">Placa</label><input id="placa" name="placa" placeholder="ABC-123" required></div>
           </div>
           <div class="campo">
             <label for="servicio">Servicio</label>
             <select id="servicio" name="servicio" required>
-              <option value="">Selecciona un servicio</option>
+              <option value="">Elige un servicio</option>
               <option>Mantenimiento GLP + gasolina (50% en GLP)</option>
               <option>Mantenimiento de GLP</option>
               <option>Mantenimiento de gasolina</option>
@@ -241,8 +195,7 @@
           </div>
           <div class="campo"><label for="mensaje">Mensaje (opcional)</label><textarea id="mensaje" name="mensaje" rows="3"></textarea></div>
           <button class="boton boton--whatsapp boton--bloque" type="submit">Enviar por WhatsApp</button>
-          <p class="aviso-privacidad">Tus datos se envían solo por WhatsApp a Cavalié Automotriz para responder tu cotización. Ver <a href="/politica-de-privacidad/">política de privacidad</a>.</p>
+          <p class="aviso-privacidad">Tus datos van solo por WhatsApp a Cavalié Automotriz para responder tu cotización. <a href="/politica-de-privacidad/">Política de privacidad</a>.</p>
         </form>
       </div>
     </section>
-  

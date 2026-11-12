@@ -26,7 +26,7 @@ PAGINAS = {
         "archivo": "inicio.html",
         "titulo": "Taller automotriz en Lima: mantenimiento GLP y gasolina | Cavalié",
         "descripcion": "Taller automotriz y mecánico en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina en un solo lugar: 50% de descuento en el GLP al hacer ambos. 4,8★ en Google.",
-        "portada": "hero-atencion",
+        "portada": "portada",
         "prioridad": "1.0",
     },
     "/mantenimiento-glp/": {
@@ -138,8 +138,8 @@ def armar(publicar=False):
         precarga = ""
         if p.get("portada"):
             n = p["portada"]
-            precarga = (f'\n  <link rel="preload" as="image" href="/img/{n}-1520.webp" '
-                        f'imagesrcset="/img/{n}-800.webp 800w, /img/{n}-1520.webp 1520w" imagesizes="100vw">')
+            precarga = (f'\n  <link rel="preload" as="image" href="/img/{n}-720.webp" '
+                        f'imagesrcset="/img/{n}-480.webp 480w, /img/{n}-720.webp 720w" imagesizes="(max-width: 900px) 100vw, 50vw">')
 
         html = (plantilla
                 .replace("{{titulo}}", p["titulo"])
