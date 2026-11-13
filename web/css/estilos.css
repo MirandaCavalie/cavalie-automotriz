@@ -270,7 +270,7 @@ strong { font-weight: 600; }
 .faq__mas { margin-top: 28px; }
 
 /* Clientes corporativos */
-.clientes { padding: 96px 0; border-top: 1px solid var(--linea); }
+.clientes { padding: 72px 0 0; }
 .clientes .cabeza { margin-bottom: 40px; }
 .clientes h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
 /* Logos en carrusel: en gris y a color al pasar el mouse */
