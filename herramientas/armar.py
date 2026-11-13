@@ -26,7 +26,7 @@ PAGINAS = {
     "/": {
         "archivo": "inicio.html",
         "titulo": "Taller automotriz en Lima: mantenimiento GLP y gasolina | Cavalié",
-        "descripcion": "Taller automotriz y mecánico en Santa Beatriz, Lima. Atendiendo desde 1999. Mantenimiento de autos a GLP y gasolina en un solo lugar, todas las marcas. 4,8★ en Google.",
+        "descripcion": "Taller automotriz y mecánico multimarca en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina. 4,8★ en Google. Cotiza por WhatsApp.",
         "portada": "hero-atencion",
         "prioridad": "1.0",
     },
@@ -34,7 +34,7 @@ PAGINAS = {
         "archivo": "mantenimiento-glp.html",
         "titulo": "Mantenimiento GLP en Lima para autos duales | Cavalié",
         "nombre": "Mantenimiento GLP",
-        "descripcion": "Mantenimiento de autos a GLP en Santa Beatriz, Lima: filtros, reductor, inyectores, fugas y calibración con software de la marca. Especialistas en equipos BRC y Landi Renzo.",
+        "descripcion": "Mantenimiento GLP en Lima: filtros, reductor, inyectores, prueba de fugas y calibración. Especialistas en equipos BRC y Landi Renzo. Santa Beatriz.",
         "servicio": "Mantenimiento de sistema GLP",
         "prioridad": "0.9",
     },
@@ -42,7 +42,7 @@ PAGINAS = {
         "archivo": "mantenimiento-gasolina.html",
         "titulo": "Taller mecánico en Lima: mecánica general y mantenimiento | Cavalié",
         "nombre": "Mantenimiento gasolina",
-        "descripcion": "Taller mecánico multimarca en Santa Beatriz, Lima: mantenimiento preventivo, mecánica general, electrónica automotriz, frenos, suspensión y motor. Desde 1999.",
+        "descripcion": "Taller mecánico multimarca en Santa Beatriz, Lima: mantenimiento preventivo, mecánica general, electrónica, frenos, suspensión y motor. Desde 1999.",
         "servicio": "Mantenimiento de autos a gasolina y mecánica general",
         "prioridad": "0.9",
     },
@@ -191,6 +191,7 @@ def armar(publicar=False):
                 .replace("{{preload}}", precarga)
                 .replace("{{schema}}", "\n  ".join(ld(e) for e in esquemas))
                 .replace("{{contenido}}", contenido)
+                .replace('  <link rel="canonical" href="https://cavalieautomotriz.com/404.html">\n', "")
                 .replace("<body>", '<body class="inicio">' if ruta == "/" else "<body>", 1))
         # marcar la página actual en el menú
         html = html.replace(f'<a href="{ruta}">', f'<a href="{ruta}" aria-current="page">', 1) if ruta != "/" else html

@@ -5,14 +5,410 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/img/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/servicios",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/servicios/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nosotros",
+      "destination": "/#nosotros",
+      "statusCode": 301
+    },
+    {
+      "source": "/nosotros/",
+      "destination": "/#nosotros",
+      "statusCode": 301
+    },
+    {
+      "source": "/trabajos",
+      "destination": "/#trabajos",
+      "statusCode": 301
+    },
+    {
+      "source": "/trabajos/",
+      "destination": "/#trabajos",
+      "statusCode": 301
+    },
+    {
+      "source": "/conversiones-a-glp",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conversiones-a-glp/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conversiones-a-gas",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conversiones-a-gas/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conversiones-a-glp-5-puntos-importantes",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/conversiones-a-glp-5-puntos-importantes/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/conversiones-a-glp",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/conversiones-a-glp/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/conversiones-a-gas-glp",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/conversiones-a-gas-glp/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter/conversiones-a-gas",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter/conversiones-a-gas/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/taller-mecanica-automotriz-2",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/taller-mecanica-automotriz-2/",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/diagnostico-mitos-y-verdades",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/diagnostico-mitos-y-verdades/",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/taller-mecanica-automotriz",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/taller-mecanica-automotriz/",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preguntas-frecuentes-conversion-a-glp",
+      "destination": "/preguntas-frecuentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preguntas-frecuentes-conversion-a-glp/",
+      "destination": "/preguntas-frecuentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preguntas-frecuentes-taller-mecanica-automotriz",
+      "destination": "/preguntas-frecuentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preguntas-frecuentes-taller-mecanica-automotriz/",
+      "destination": "/preguntas-frecuentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preguntas-frecuentes-pintura-autos",
+      "destination": "/preguntas-frecuentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preguntas-frecuentes-pintura-autos/",
+      "destination": "/preguntas-frecuentes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias",
+      "destination": "/contacto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias/",
+      "destination": "/contacto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-contacto",
+      "destination": "/contacto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/gracias-contacto/",
+      "destination": "/contacto/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pintura-autos",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pintura-autos/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/10-puntos-en-planchado-y-pintura",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/10-puntos-en-planchado-y-pintura/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/pintura-autos",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/pintura-autos/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/pintado-de-autos",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/pintado-de-autos/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter/pintura-autos",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/filter/pintura-autos/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bienvenidos-al-blog",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bienvenidos-al-blog/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cavalie-blog",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cavalie-blog/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/columns",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/columns/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home1-q",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home1-q/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cavalie-automotriz",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cavalie-automotriz/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/cavalie",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/cavalie/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/glp",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/glp/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/taller",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/taller/",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/taller2020xxxxx",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/taller2020xxxxx/",
+      "destination": "/mantenimiento-gasolina/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/pintura",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/pintura/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lp/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calculadora",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/calculadora/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mailing/glp",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mailing/glp/",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/landing/conversion-glp.html",
+      "destination": "/mantenimiento-glp/",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/Portfolio/:ruta*",
+      "destination": "/#trabajos",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio/:ruta*",
+      "destination": "/#trabajos",
+      "statusCode": 301
     }
   ]
 }
