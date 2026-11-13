@@ -68,6 +68,13 @@ PAGINAS = {
         "descripcion": "Cómo Cavalié Automotriz trata los datos que nos envías por WhatsApp o por el formulario de cotización.",
         "prioridad": "0.3",
     },
+    "/libro-de-reclamaciones/": {
+        "archivo": "libro-de-reclamaciones.html",
+        "titulo": "Libro de Reclamaciones | Cavalié Automotriz",
+        "nombre": "Libro de Reclamaciones",
+        "descripcion": "Libro de Reclamaciones virtual de CARVALIE E.I.R.L. (Cavalié Automotriz), RUC 20503409021. Registra tu reclamo o queja.",
+        "prioridad": "0.3",
+    },
     "/404.html": {
         "archivo": "404.html",
         "titulo": "Página no encontrada | Cavalié Automotriz",
