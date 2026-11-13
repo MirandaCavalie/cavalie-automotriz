@@ -25,7 +25,7 @@ DOMINIO = "https://cavalieautomotriz.com"
 PAGINAS = {
     "/": {
         "archivo": "inicio.html",
-        "titulo": "Taller automotriz en Lima: mantenimiento GLP y gasolina | Cavalié",
+        "titulo": "Taller automotriz en Lima: GLP y gasolina | Cavalié Automotriz",
         "descripcion": "Taller automotriz y mecánico multimarca en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina. 4,8★ en Google. Cotiza por WhatsApp.",
         "portada": "hero-atencion",
         "faq": True,
@@ -34,7 +34,7 @@ PAGINAS = {
     },
     "/mantenimiento-glp/": {
         "archivo": "mantenimiento-glp.html",
-        "titulo": "Mantenimiento GLP en Lima: taller BRC y Landi Renzo | Cavalié",
+        "titulo": "Mantenimiento GLP en Lima: BRC y Landi Renzo | Cavalié Automotriz",
         "nombre": "Mantenimiento GLP",
         "descripcion": "Mantenimiento de GLP en Lima: filtros, reductor, inyectores, prueba de fugas y calibración con software. BRC, Landi Renzo y todas las marcas.",
         "faq": True,
@@ -43,7 +43,7 @@ PAGINAS = {
     },
     "/mantenimiento-gasolina/": {
         "archivo": "mantenimiento-gasolina.html",
-        "titulo": "Taller mecánico en Lima: mecánica general y mantenimiento | Cavalié",
+        "titulo": "Taller mecánico en Lima: mecánica general | Cavalié Automotriz",
         "nombre": "Mantenimiento gasolina",
         "descripcion": "Taller mecánico multimarca en Santa Beatriz, Lima: mantenimiento preventivo, mecánica general, electrónica, frenos, suspensión y motor. Desde 1999.",
         "servicio": "Mantenimiento de autos a gasolina y mecánica general",
@@ -51,7 +51,7 @@ PAGINAS = {
     },
     "/preguntas-frecuentes/": {
         "archivo": "preguntas-frecuentes.html",
-        "titulo": "Preguntas frecuentes sobre GLP y mantenimiento | Cavalié",
+        "titulo": "Preguntas frecuentes sobre GLP | Cavalié Automotriz",
         "nombre": "Preguntas frecuentes",
         "descripcion": "Cada cuánto hacer el mantenimiento GLP, cuánto se ahorra con gas, si pierde potencia, qué aceite usar y más. Respuestas del equipo de Cavalié Automotriz.",
         "faq": True,
@@ -73,7 +73,7 @@ PAGINAS = {
     },
     "/guias/": {
         "archivo": "guias/index.html",
-        "titulo": "Guías para cuidar tu auto: GLP y mantenimiento | Cavalié",
+        "titulo": "Guías para cuidar tu auto | Cavalié Automotriz",
         "nombre": "Guías",
         "descripcion": "Guías del taller Cavalié Automotriz sobre mantenimiento GLP, GLP o GNV, señales de falla y cómo elegir un taller mecánico de confianza en Lima.",
         "prioridad": "0.6",
@@ -89,7 +89,7 @@ PAGINAS = {
     },
     "/guias/senales-falla-glp/": {
         "archivo": "guias/senales-falla-glp.html",
-        "titulo": "7 señales de que tu auto a GLP necesita revisión | Cavalié",
+        "titulo": "7 señales de falla del GLP en tu auto | Cavalié Automotriz",
         "titular": "7 señales de que tu auto a GLP necesita revisión",
         "nombre": "Señales de falla del GLP",
         "descripcion": "Tirones, se pasa solo a gasolina, olor a gas, más consumo o check engine: qué significa cada señal de falla del GLP y qué hacer. Guía de Cavalié Automotriz.",
@@ -98,7 +98,7 @@ PAGINAS = {
     },
     "/guias/glp-o-gnv/": {
         "archivo": "guias/glp-o-gnv.html",
-        "titulo": "GLP o GNV: cuál conviene para tu auto en Lima | Cavalié",
+        "titulo": "GLP o GNV: cuál conviene en Lima | Cavalié Automotriz",
         "titular": "GLP o GNV: cuál conviene para tu auto en Lima",
         "nombre": "GLP o GNV",
         "descripcion": "GLP o GNV para tu auto en Lima: diferencias en ahorro, potencia, autonomía, espacio del tanque y desgaste del motor. Guía de Cavalié Automotriz.",
@@ -107,7 +107,7 @@ PAGINAS = {
     },
     "/guias/como-elegir-taller-mecanico-lima/": {
         "archivo": "guias/como-elegir-taller-mecanico-lima.html",
-        "titulo": "Cómo elegir un taller mecánico de confianza en Lima | Cavalié",
+        "titulo": "Cómo elegir un taller mecánico en Lima | Cavalié Automotriz",
         "titular": "Cómo elegir un taller mecánico de confianza en Lima: 8 cosas que debes pedir",
         "nombre": "Cómo elegir un taller mecánico",
         "descripcion": "8 cosas que debes pedir antes de dejar tu auto en un taller mecánico en Lima: diagnóstico, presupuesto, historial, reseñas y más. Guía de Cavalié Automotriz.",
@@ -246,7 +246,7 @@ def armar(publicar=False):
             esquemas.append(articulo(ruta, p))
         if p.get("sitio_web"):
             esquemas.append({"@context": "https://schema.org", "@type": "WebSite", "@id": DOMINIO + "/#sitio",
-                             "name": "Cavalié Automotriz", "alternateName": "Cavalié", "url": DOMINIO + "/",
+                             "name": "Cavalié Automotriz", "alternateName": "Cavalié: Taller Automotriz y Mecánico", "url": DOMINIO + "/",
                              "inLanguage": "es-PE", "publisher": {"@id": DOMINIO + "/#taller"}})
         if p.get("servicio"):
             esquemas.append({
