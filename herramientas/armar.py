@@ -11,6 +11,7 @@ Uso:
 Solo usa la biblioteca estándar de Python.
 """
 import json
+import re
 import sys
 from datetime import date
 from pathlib import Path
@@ -111,6 +112,40 @@ def faq_desde_html(html):
     return {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": preguntas}
 
 
+# Bloques de texto donde se evita la viuda (una palabra sola en la última línea)
+_BLOQUES = re.compile(r"(<(h[1-3]|p|li|dd|summary|blockquote|figcaption)\b[^>]*>)(.*?)(</\2>)", re.S)
+
+
+def sin_viudas(html):
+    """Une las dos últimas palabras de cada bloque de texto con &nbsp;.
+
+    Respaldo para navegadores sin `text-wrap: balance/pretty` (ver estilos.css).
+    En los títulos solo se unen si juntas son cortas, para que no desborden en celular.
+    """
+    def unir(m):
+        apertura, etiqueta, interior, cierre = m.groups()
+        partes = re.split(r"(<[^>]+>)", interior)
+        for i in range(len(partes) - 1, -1, -1):
+            texto = partes[i]
+            if texto.startswith("<"):
+                continue
+            recortado = texto.rstrip()
+            pos = recortado.rfind(" ")
+            if pos == -1:
+                if recortado:  # la última palabra está sola en este tramo; el espacio previo está antes de una etiqueta
+                    break
+                continue
+            ultima = re.sub(r"<[^>]+>", "", "".join(partes[i + 1:])).strip()
+            ultimas = (recortado[pos + 1:] + ultima)
+            penultima = recortado[:pos].rsplit(" ", 1)[-1]
+            if etiqueta.startswith("h") and len(penultima) + len(ultimas) > 14:
+                break
+            partes[i] = recortado[:pos] + "&nbsp;" + texto[pos + 1:]
+            break
+        return apertura + "".join(partes) + cierre
+    return _BLOQUES.sub(unir, html)
+
+
 def armar(publicar=False):
     plantilla = (FUENTE / "plantilla.html").read_text(encoding="utf-8")
     negocio = json.loads((FUENTE / "negocio.json").read_text(encoding="utf-8"))
@@ -151,6 +186,8 @@ def armar(publicar=False):
                 .replace("<body>", '<body class="inicio">' if ruta == "/" else "<body>", 1))
         # marcar la página actual en el menú
         html = html.replace(f'<a href="{ruta}">', f'<a href="{ruta}" aria-current="page">', 1) if ruta != "/" else html
+
+        html = sin_viudas(html)
 
         if ruta.endswith(".html"):
             destino = WEB / ruta.strip("/")
