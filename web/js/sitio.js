@@ -29,7 +29,7 @@
     });
   });
 
-  // Trabajos realizados: carrusel que avanza solo, se puede arrastrar con el mouse y usar flechas
+  // Trabajos realizados: carrusel que avanza solo y se puede arrastrar con el mouse
   var fila = document.getElementById('trabajos-fila');
   if (fila) {
     var originales = Array.prototype.slice.call(fila.children);
@@ -60,15 +60,6 @@
     fila.addEventListener('pointerup', soltar);
     fila.addEventListener('pointercancel', soltar);
     fila.addEventListener('dragstart', function (e) { e.preventDefault(); });
-    document.querySelectorAll('.flecha').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var paso = originales[0].offsetWidth + 16;
-        esperar(1200);
-        pos = fila.scrollLeft + paso * Number(b.getAttribute('data-dir'));
-        if (pos < 0) { pos += vuelta(); fila.scrollLeft = pos + paso; }
-        fila.scrollTo({ left: pos, behavior: 'smooth' });
-      });
-    });
   }
 
   // Formulario de cotización: arma el mensaje y abre WhatsApp (no se guarda nada en el servidor)

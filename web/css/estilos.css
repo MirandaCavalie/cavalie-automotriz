@@ -1,6 +1,6 @@
 /* Cavalié Automotriz — estilos del sitio
    Sistema visual de la propuesta de diseño (nov 2026):
-   azul marino + lima, tipografía Schibsted Grotesk, etiquetas entre corchetes. */
+   azul marino + lima, tipografía Schibsted Grotesk. Un solo tamaño de título por nivel (h1, h2, h3). */
 
 @font-face {
   font-family: "Schibsted Grotesk";
@@ -55,7 +55,7 @@ a:hover { color: var(--azul-hover); }
 h1, h2, h3 { font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 .5em; color: var(--tinta); }
 h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
 h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
-h3 { font-size: 1.4rem; letter-spacing: -0.02em; line-height: 1.2; }
+h3 { font-size: 1.45rem; letter-spacing: -0.02em; line-height: 1.2; }
 p { margin: 0 0 1em; }
 strong { font-weight: 600; }
 .ico { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
@@ -72,14 +72,11 @@ strong { font-weight: 600; }
 .saltar:focus { left: 12px; top: 12px; z-index: 100; background: #fff; padding: 8px 12px; }
 :focus-visible { outline: 2px solid var(--azul); outline-offset: 3px; }
 
-/* Etiquetas entre corchetes */
-.etiqueta { margin: 0; font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--suave); }
 
-/* Cabecera de sección: título a la izquierda, etiqueta a la derecha */
+/* Cabecera de sección: título a la izquierda, controles a la derecha */
 .cabeza { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 56px; }
 .cabeza h2 { margin: 0; max-width: 640px; }
 .cabeza--abajo { align-items: flex-end; }
-.cabeza__lado { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; }
 
 /* Botones */
 .boton {
@@ -120,7 +117,7 @@ strong { font-weight: 600; }
 .cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; }
 .menu { display: flex; align-items: center; gap: 28px; }
 .menu__enlaces { display: flex; gap: 28px; }
-.menu__enlaces a { color: #fff; text-decoration: none; font-size: .8rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+.menu__enlaces a { color: #fff; text-decoration: none; font-size: .95rem; font-weight: 500; }
 .menu__enlaces a:hover { color: var(--lima); }
 .inicio .cabecera { position: absolute; left: 0; right: 0; background: transparent; }
 @media (max-width: 760px) { .menu__enlaces { display: none; } .cabecera__fila { min-height: 76px; } }
@@ -136,7 +133,7 @@ strong { font-weight: 600; }
 .hero__llegar:hover { color: var(--lima); border-color: var(--lima); }
 .hero__llegar .ico { width: 16px; height: 16px; }
 .hero__abajo { margin-top: auto; padding-bottom: 36px; }
-.hero__nota { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; color: #fff; text-decoration: none; font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.hero__nota { display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; color: #fff; text-decoration: none; font-size: .875rem; font-weight: 500; }
 .hero__nota:hover { color: #fff; border-color: #fff; }
 .hero__nota span { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 999px; background: var(--lima); color: var(--tinta); }
 .hero__nota .ico-estrella { width: 13px; height: 13px; fill: var(--tinta); }
@@ -180,7 +177,6 @@ strong { font-weight: 600; }
 .tarjeta h3, .tarjeta p, .tarjeta__accion { transition: color .3s; }
 .tarjeta:hover h3, .tarjeta:focus-within h3, .tarjeta:hover .tarjeta__accion, .tarjeta:focus-within .tarjeta__accion { color: #fff; }
 .tarjeta:hover p, .tarjeta:focus-within p { color: var(--sobre-azul); }
-.tarjeta:hover .etiqueta, .tarjeta:focus-within .etiqueta { color: var(--lima); }
 .tarjeta__icono { transition: background-color .3s; }
 .tarjeta:hover .tarjeta__icono, .tarjeta:focus-within .tarjeta__icono { background: var(--lima); color: var(--tinta); }
 /* Sin mouse (celular) la foto va arriba de la tarjeta */
@@ -191,35 +187,30 @@ strong { font-weight: 600; }
   .tarjeta:hover h3, .tarjeta:hover .tarjeta__accion { color: var(--azul); }
   .tarjeta:hover h3 { color: var(--tinta); }
   .tarjeta:hover p { color: var(--suave); }
-  .tarjeta:hover .etiqueta { color: var(--suave); }
   .tarjeta:hover .tarjeta__icono { background: var(--lima-suave); color: var(--azul); }
 }
 .tarjeta__icono { display: inline-flex; width: 48px; height: 48px; align-items: center; justify-content: center; border-radius: 10px; background: var(--lima-suave); color: var(--azul); }
 .tarjeta__icono .ico { width: 24px; height: 24px; }
-.tarjeta h3 { margin: 0; font-size: 1.5rem; }
+.tarjeta h3 { margin: 0; }
 .tarjeta h3 a { color: inherit; text-decoration: none; }
 .tarjeta h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .tarjeta p { margin: 0; font-size: .94rem; color: var(--suave); }
-.tarjeta .etiqueta { letter-spacing: .12em; }
 .tarjeta__accion { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: .875rem; font-weight: 600; color: var(--azul); text-decoration: none; }
 .tarjeta__accion .ico { width: 16px; height: 16px; transition: transform .2s; }
 .tarjeta__accion:hover .ico { transform: translateX(3px); }
 .garantias { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; margin-top: 40px; font-size: .875rem; }
 .garantias span { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
 .garantias .ico { width: 18px; height: 18px; color: var(--azul); }
-.garantias .garantias__titulo { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--suave); }
+.garantias .garantias__titulo { color: var(--suave); }
 
 /* Cómo funciona */
 .pasos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-top: 1px solid var(--linea-fuerte); }
 .pasos li { padding: 28px 28px 8px 0; display: flex; flex-direction: column; gap: 14px; }
 .pasos .ico { width: 28px; height: 28px; color: var(--azul); }
-.pasos h3 { margin: 0; font-size: 1.375rem; }
-.pasos p:not(.etiqueta) { margin: 0; font-size: .94rem; color: var(--suave); }
+.pasos h3 { margin: 0; }
+.pasos p { margin: 0; font-size: .94rem; color: var(--suave); }
 
 /* Trabajos realizados: fila que se desliza */
-.trabajos__flechas { display: flex; gap: 8px; }
-.flecha { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--azul); background: transparent; color: var(--azul); display: grid; place-items: center; cursor: pointer; transition: background-color .2s, color .2s; }
-.flecha:hover { background: var(--azul); color: #fff; }
 #trabajos .cabeza { margin-bottom: 48px; }
 .trabajos { display: flex; gap: 16px; overflow-x: auto; scrollbar-width: none; cursor: grab; user-select: none; -webkit-user-select: none;
   padding: 0 max(var(--borde), calc((100vw - var(--ancho)) / 2 + var(--borde))); scroll-padding: 0 max(var(--borde), calc((100vw - var(--ancho)) / 2 + var(--borde))); }
@@ -230,11 +221,10 @@ strong { font-weight: 600; }
 .trabajo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radio-chico); }
 .trabajo figcaption { margin-top: 12px; font-size: .875rem; color: var(--suave); }
 .trabajo figcaption strong { display: block; color: var(--tinta); font-weight: 500; }
-@media (max-width: 640px) { .trabajos__flechas { display: none; } .trabajo { flex-basis: 78vw; } }
+@media (max-width: 640px) { .trabajo { flex-basis: 78vw; } }
 
 /* Reseñas: banda azul con carrusel continuo */
 .resenas { background: var(--azul); color: #fff; padding: 112px 0; }
-.resenas .etiqueta { color: var(--lima); }
 .resenas__cabeza { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; margin-bottom: 56px; }
 .resenas__cabeza h2 { color: #fff; margin: 0; max-width: 520px; }
 .resenas__resumen { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px; }
@@ -287,7 +277,6 @@ strong { font-weight: 600; }
 /* Clientes corporativos */
 .clientes { padding: 72px 0 0; }
 .clientes .cabeza { margin-bottom: 40px; }
-.clientes h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
 /* Logos en carrusel: en gris y a color al pasar el mouse */
 .carrusel--logos .carrusel__pista { align-items: center; gap: 72px; animation-duration: 40s; }
 .carrusel--logos img { height: 64px; width: auto; max-width: 260px; object-fit: contain; filter: grayscale(1); opacity: .65; transition: filter .3s, opacity .3s; }
@@ -298,7 +287,6 @@ strong { font-weight: 600; }
 
 /* Formulario */
 .dos-columnas { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-.dos-columnas .etiqueta + h2 { margin-top: 20px; }
 .dos-columnas > img { border-radius: var(--radio); }
 @media (max-width: 900px) { .dos-columnas { grid-template-columns: 1fr; gap: 36px; } }
 .formulario { background: #fff; border-radius: var(--radio); padding: 36px; border: 1px solid var(--linea); }
@@ -316,7 +304,7 @@ strong { font-weight: 600; }
 .encabezado-pagina p { font-size: 1.15rem; max-width: 680px; margin-bottom: 28px; }
 .encabezado-pagina .boton--contorno { color: #fff; border-color: rgba(255,255,255,.5); }
 .encabezado-pagina .boton--contorno:hover { background: rgba(255,255,255,.12); }
-.migas { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--lima); margin-bottom: 24px; }
+.migas { font-size: .9rem; font-weight: 500; color: var(--lima); margin-bottom: 20px; }
 .migas a { color: var(--lima); text-decoration: none; }
 .migas a:hover { text-decoration: underline; color: var(--lima-hover); }
 .texto-legal { max-width: 760px; }
@@ -345,7 +333,7 @@ strong { font-weight: 600; }
 .pie a { color: var(--sobre-pie); text-decoration: none; }
 .pie a:hover { color: #fff; text-decoration: underline; }
 .pie__llamado { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,.18); }
-.pie__llamado h2 { margin: 0; max-width: 720px; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; letter-spacing: -0.04em; color: #fff; }
+.pie__llamado h2 { margin: 0; max-width: 720px; color: #fff; }
 .pie__llamado h2 span { color: var(--lima); }
 .pie .pie__llamado .boton { color: var(--tinta); }
 .pie .pie__llamado .boton:hover { color: var(--tinta); text-decoration: none; }
