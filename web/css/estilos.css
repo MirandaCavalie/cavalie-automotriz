@@ -152,8 +152,8 @@ strong { font-weight: 600; }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,18,70,.6) 0%, rgba(10,18,70,.15) 40%, rgba(10,18,70,.88) 100%); }
 .hero > .contenedor { position: relative; z-index: 1; }
 .hero__arriba { padding-top: 150px; }
+.hero .hero__sub { margin: 18px 0 0; max-width: none; font-size: clamp(1.05rem, 1.6vw, 1.3rem); line-height: 1.4; font-weight: 500; letter-spacing: 0; color: #E7ECF8; }
 .hero__frase { margin: 0; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1; font-weight: 600; letter-spacing: -0.04em; color: #fff; }
-.hero h1 { margin: 0; max-width: 380px; font-size: 1.06rem; line-height: 1.45; font-weight: 500; letter-spacing: 0; color: #fff; }
 .hero__llegar { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.6); color: #fff; font-size: .875rem; font-weight: 500; text-decoration: none; }
 .hero__llegar:hover { color: var(--lima); border-color: var(--lima); }
 .hero__llegar .ico { width: 16px; height: 16px; }
