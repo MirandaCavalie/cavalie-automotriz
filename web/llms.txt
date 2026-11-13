@@ -32,4 +32,9 @@
 - [Mantenimiento gasolina y mecánica general](https://cavalieautomotriz.com/mantenimiento-gasolina/): mantenimiento preventivo, diagnóstico computarizado, motor, suspensión y dirección
 - [Preguntas frecuentes](https://cavalieautomotriz.com/preguntas-frecuentes/): ahorro con GLP, potencia, seguridad e intervalos de mantenimiento
 - [Contacto y cómo llegar](https://cavalieautomotriz.com/contacto/)
+- [Guías](https://cavalieautomotriz.com/guias/):
+  - [Mantenimiento GLP en Lima: qué incluye, cada cuánto y cuánto cuesta](https://cavalieautomotriz.com/guias/mantenimiento-glp-lima/)
+  - [7 señales de que tu auto a GLP necesita revisión](https://cavalieautomotriz.com/guias/senales-falla-glp/)
+  - [GLP o GNV: cuál conviene para tu auto en Lima](https://cavalieautomotriz.com/guias/glp-o-gnv/)
+  - [Cómo elegir un taller mecánico de confianza en Lima](https://cavalieautomotriz.com/guias/como-elegir-taller-mecanico-lima/)
 - [Libro de Reclamaciones](https://cavalieautomotriz.com/libro-de-reclamaciones/)

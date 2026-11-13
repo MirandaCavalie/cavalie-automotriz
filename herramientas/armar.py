@@ -71,6 +71,49 @@ PAGINAS = {
         "descripcion": "Cómo Cavalié Automotriz trata los datos que nos envías por WhatsApp o por el formulario de cotización.",
         "prioridad": "0.3",
     },
+    "/guias/": {
+        "archivo": "guias/index.html",
+        "titulo": "Guías para cuidar tu auto: GLP y mantenimiento | Cavalié",
+        "nombre": "Guías",
+        "descripcion": "Guías del taller Cavalié Automotriz sobre mantenimiento GLP, GLP o GNV, señales de falla y cómo elegir un taller mecánico de confianza en Lima.",
+        "prioridad": "0.6",
+    },
+    "/guias/mantenimiento-glp-lima/": {
+        "archivo": "guias/mantenimiento-glp-lima.html",
+        "titulo": "Mantenimiento GLP en Lima: qué incluye, cada cuánto y precio",
+        "titular": "Mantenimiento GLP en Lima: qué incluye, cada cuánto y cuánto cuesta",
+        "nombre": "Mantenimiento GLP: guía",
+        "descripcion": "Qué incluye un mantenimiento GLP completo, cada cuántos kilómetros se hace, señales de que toca y de qué depende el precio en Lima. Guía de Cavalié Automotriz.",
+        "fecha": "2026-11-13",
+        "prioridad": "0.7",
+    },
+    "/guias/senales-falla-glp/": {
+        "archivo": "guias/senales-falla-glp.html",
+        "titulo": "7 señales de que tu auto a GLP necesita revisión | Cavalié",
+        "titular": "7 señales de que tu auto a GLP necesita revisión",
+        "nombre": "Señales de falla del GLP",
+        "descripcion": "Tirones, se pasa solo a gasolina, olor a gas, más consumo o check engine: qué significa cada señal de falla del GLP y qué hacer. Guía de Cavalié Automotriz.",
+        "fecha": "2026-11-13",
+        "prioridad": "0.7",
+    },
+    "/guias/glp-o-gnv/": {
+        "archivo": "guias/glp-o-gnv.html",
+        "titulo": "GLP o GNV: cuál conviene para tu auto en Lima | Cavalié",
+        "titular": "GLP o GNV: cuál conviene para tu auto en Lima",
+        "nombre": "GLP o GNV",
+        "descripcion": "GLP o GNV para tu auto en Lima: diferencias en ahorro, potencia, autonomía, espacio del tanque y desgaste del motor. Guía de Cavalié Automotriz.",
+        "fecha": "2026-11-13",
+        "prioridad": "0.7",
+    },
+    "/guias/como-elegir-taller-mecanico-lima/": {
+        "archivo": "guias/como-elegir-taller-mecanico-lima.html",
+        "titulo": "Cómo elegir un taller mecánico de confianza en Lima | Cavalié",
+        "titular": "Cómo elegir un taller mecánico de confianza en Lima: 8 cosas que debes pedir",
+        "nombre": "Cómo elegir un taller mecánico",
+        "descripcion": "8 cosas que debes pedir antes de dejar tu auto en un taller mecánico en Lima: diagnóstico, presupuesto, historial, reseñas y más. Guía de Cavalié Automotriz.",
+        "fecha": "2026-11-13",
+        "prioridad": "0.7",
+    },
     "/libro-de-reclamaciones/": {
         "archivo": "libro-de-reclamaciones.html",
         "titulo": "Libro de Reclamaciones | Cavalié Automotriz",
@@ -94,14 +137,38 @@ def ld(objeto):
     return '<script type="application/ld+json">\n' + texto + "\n  </script>"
 
 
-def migas(ruta, titulo):
+def migas(ruta, titulo, padre=None):
+    """Migas de pan: Inicio › (padre) › página. `padre` es (ruta, nombre), p. ej. las guías."""
+    niveles = [("/", "Inicio")] + ([padre] if padre else []) + [(ruta, titulo)]
     return {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Inicio", "item": DOMINIO + "/"},
-            {"@type": "ListItem", "position": 2, "name": titulo, "item": DOMINIO + ruta},
+            {"@type": "ListItem", "position": i, "name": n, "item": DOMINIO + r}
+            for i, (r, n) in enumerate(niveles, 1)
         ],
+    }
+
+
+GUIAS = ("/guias/", "Guías")
+AUTOR = {"@type": "Person", "name": "Domingo Cavalié", "jobTitle": "Fundador de Cavalié Automotriz",
+         "worksFor": {"@id": DOMINIO + "/#taller"}}
+
+
+def articulo(ruta, p):
+    """Schema Article para las guías, con Domingo Cavalié como autor."""
+    return {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": p["titular"],
+        "description": p["descripcion"],
+        "author": AUTOR,
+        "publisher": {"@id": DOMINIO + "/#taller"},
+        "datePublished": p["fecha"],
+        "dateModified": p["fecha"],
+        "inLanguage": "es-PE",
+        "image": DOMINIO + "/img/og-cavalie.jpg",
+        "mainEntityOfPage": DOMINIO + ruta,
     }
 
 
@@ -174,7 +241,9 @@ def armar(publicar=False):
         contenido = (FUENTE / "paginas" / p["archivo"]).read_text(encoding="utf-8")
         esquemas = [negocio]
         if p.get("nombre"):
-            esquemas.append(migas(ruta, p["nombre"]))
+            esquemas.append(migas(ruta, p["nombre"], GUIAS if p.get("titular") else None))
+        if p.get("titular"):
+            esquemas.append(articulo(ruta, p))
         if p.get("sitio_web"):
             esquemas.append({"@context": "https://schema.org", "@type": "WebSite", "@id": DOMINIO + "/#sitio",
                              "name": "Cavalié Automotriz", "alternateName": "Cavalié", "url": DOMINIO + "/",
