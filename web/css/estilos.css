@@ -153,6 +153,7 @@ strong { font-weight: 600; }
 .nosotros__foto { margin-top: 32px; width: 100%; max-width: 400px; aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--radio-chico); border: 1px solid rgba(255,255,255,.12); }
 .nosotros__texto { flex: 1.4 1 420px; }
 .nosotros__cita { margin: 0; font-size: clamp(1.35rem, 2.4vw, 1.9rem); line-height: 1.35; font-weight: 500; letter-spacing: -0.01em; color: #fff; }
+.nosotros__cita em { font-style: normal; color: var(--lima); }
 .nosotros__firma { margin: 20px 0 0; font-size: .875rem; font-weight: 600; letter-spacing: .04em; }
 .cifras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 56px 0 0; padding-top: 32px; border-top: 1px solid rgba(255,255,255,.16); }
 .cifras dt { font-size: 2.5rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; color: var(--lima); }
