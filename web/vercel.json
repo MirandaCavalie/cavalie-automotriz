@@ -406,7 +406,17 @@
       "statusCode": 301
     },
     {
+      "source": "/Portfolio/:ruta*/",
+      "destination": "/#trabajos",
+      "statusCode": 301
+    },
+    {
       "source": "/portfolio/:ruta*",
+      "destination": "/#trabajos",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio/:ruta*/",
       "destination": "/#trabajos",
       "statusCode": 301
     }
