@@ -28,6 +28,8 @@ PAGINAS = {
         "titulo": "Taller automotriz en Lima: mantenimiento GLP y gasolina | Cavalié",
         "descripcion": "Taller automotriz y mecánico multimarca en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina. 4,8★ en Google. Cotiza por WhatsApp.",
         "portada": "hero-atencion",
+        "faq": True,
+        "sitio_web": True,
         "prioridad": "1.0",
     },
     "/mantenimiento-glp/": {
@@ -172,6 +174,10 @@ def armar(publicar=False):
         esquemas = [negocio]
         if p.get("nombre"):
             esquemas.append(migas(ruta, p["nombre"]))
+        if p.get("sitio_web"):
+            esquemas.append({"@context": "https://schema.org", "@type": "WebSite", "@id": DOMINIO + "/#sitio",
+                             "name": "Cavalié Automotriz", "alternateName": "Cavalié", "url": DOMINIO + "/",
+                             "inLanguage": "es-PE", "publisher": {"@id": DOMINIO + "/#taller"}})
         if p.get("servicio"):
             esquemas.append({
                 "@context": "https://schema.org",

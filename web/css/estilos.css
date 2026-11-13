@@ -258,6 +258,8 @@ strong { font-weight: 600; }
 .resenas__detalle { display: flex; flex-direction: column; gap: 6px; font-size: .875rem; color: var(--sobre-azul); }
 .resenas__detalle .ico-estrella { width: 18px; height: 18px; }
 @media (max-width: 640px) { .resenas { padding: 72px 0; } .resenas__cabeza { margin-bottom: 36px; } .resenas__numero { font-size: 2.75rem; } .resenas__nota { border-right: 0; padding-right: 0; } }
+.resenas__intro { margin: -12px 0 0; max-width: 620px; color: var(--sobre-azul); font-size: 1.06rem; }
+.ubicacion__intro { margin: -12px 0 0; }
 .carrusel { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
 .carrusel__pista { display: flex; gap: 16px; width: max-content; animation: desplazar 70s linear infinite; }
 .carrusel:hover .carrusel__pista { animation-play-state: paused; }

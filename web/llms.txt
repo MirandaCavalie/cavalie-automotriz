@@ -1,18 +1,35 @@
 # Cavalié Automotriz
 
-> Taller automotriz multimarca en Santa Beatriz, Cercado de Lima (Perú), fundado en 1999 por Domingo Cavalié. Especializado en mantenimiento de autos a GLP (gas licuado de petróleo) y a gasolina. Calificación 4,8 de 5 en Google con más de 500 reseñas.
+> Taller automotriz y mecánico multimarca en Santa Beatriz, Cercado de Lima (Perú), fundado en 1999 por Domingo Cavalié. Mantenimiento preventivo, mecánica general, electrónica automotriz y sistemas a GLP (gas licuado de petróleo) para autos a gasolina y duales. Calificación 4,8 de 5 en Google Maps con más de 500 reseñas. Lema: "Transparencia en cada servicio".
 
-- Dirección: Jr. José Gálvez 1469, Santa Beatriz, Cercado de Lima 15046, Perú
+## Datos del negocio
+- Nombre comercial: Cavalié Automotriz (en Google Maps: Cavalié Taller Automotriz y Mecánico)
+- Razón social: CARVALIE E.I.R.L. · RUC 20503409021
+- Dirección: Jr. José Gálvez 1469, Santa Beatriz, Cercado de Lima 15046, Lima, Perú
 - WhatsApp y teléfono: +51 983 745 377
 - Correo: cavalieautomotriz@gmail.com
 - Horario: lunes a viernes 8:15–13:00 y 14:00–17:50; sábados 8:15–13:00; domingos cerrado
 - Google Maps: https://maps.google.com/?cid=8464895575291937233
-- Equipos de GLP: especialistas en BRC y Landi Renzo; atienden todas las marcas
-- Taller autorizado por el MTC; certificaciones de instalaciones GLP emitidas por SGS
+- Zonas que atiende: Cercado de Lima, Santa Beatriz, Lince, Jesús María, La Victoria, San Isidro, Miraflores y el resto de Lima
+- Cómo cotizar: por WhatsApp al +51 983 745 377 o con el formulario de https://cavalieautomotriz.com/#cotizar
+
+## Servicios
+- Mantenimiento GLP: filtros, reductor-vaporizador, inyectores, prueba de fugas y calibración con el software del equipo. Cada 20 000 km o una vez al año.
+- Instalación de equipos GLP de 5.ª generación BRC y Landi Renzo, con garantía.
+- Mantenimiento preventivo según el programa del fabricante y mecánica general: aceite, filtros, frenos, suspensión, dirección y motor, con historial de cada visita.
+- Electrónica automotriz y diagnóstico: escáner, osciloscopio y analizador de gases.
+- Taller multimarca: atiende todas las marcas de autos y de equipos de GLP.
+
+## Por qué lo eligen sus clientes
+- Transparencia: explican la falla y entregan el presupuesto antes de empezar cualquier trabajo.
+- El jefe de taller muestra personalmente el trabajo realizado al entregar el auto.
+- Más de 25 años de experiencia y clientes que vuelven desde hace años, incluidas empresas.
+- 4,8 de 5 en Google con más de 500 reseñas.
 
 ## Páginas
-
-- [Mantenimiento GLP](https://cavalieautomotriz.com/mantenimiento-glp/): qué incluye, cada cuánto (cada 20 000 km o una vez al año) y señales de falla
+- [Inicio](https://cavalieautomotriz.com/): servicios, cómo trabajamos, trabajos realizados, reseñas, ubicación y cotización
+- [Mantenimiento GLP](https://cavalieautomotriz.com/mantenimiento-glp/): qué incluye, cada cuánto y señales de falla
 - [Mantenimiento gasolina y mecánica general](https://cavalieautomotriz.com/mantenimiento-gasolina/): mantenimiento preventivo, diagnóstico computarizado, motor, suspensión y dirección
-- [Preguntas frecuentes](https://cavalieautomotriz.com/preguntas-frecuentes/): ahorro con GLP, potencia, seguridad, intervalos de mantenimiento
+- [Preguntas frecuentes](https://cavalieautomotriz.com/preguntas-frecuentes/): ahorro con GLP, potencia, seguridad e intervalos de mantenimiento
 - [Contacto y cómo llegar](https://cavalieautomotriz.com/contacto/)
+- [Libro de Reclamaciones](https://cavalieautomotriz.com/libro-de-reclamaciones/)
