@@ -162,7 +162,6 @@ strong { font-weight: 600; }
 .hero__nota:hover { color: #fff; border-color: #fff; }
 .hero__nota span { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 999px; background: var(--lima); color: var(--tinta); }
 .hero__nota .ico-estrella { width: 13px; height: 13px; fill: var(--tinta); }
-.hero__logo { margin-top: 24px; width: min(100%, 860px); height: auto; filter: drop-shadow(0 2px 24px rgba(8,16,61,.35)); }
 @media (max-width: 760px) {
   .hero { min-height: 680px; }
   .hero__foto { object-position: 30% 30%; }
