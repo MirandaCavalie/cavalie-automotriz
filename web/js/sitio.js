@@ -29,13 +29,44 @@
     });
   });
 
-  // Trabajos realizados: flechas que deslizan la fila una foto a la vez
+  // Trabajos realizados: carrusel que avanza solo, se puede arrastrar con el mouse y usar flechas
   var fila = document.getElementById('trabajos-fila');
   if (fila) {
+    var originales = Array.prototype.slice.call(fila.children);
+    originales.forEach(function (f) { var c = f.cloneNode(true); c.setAttribute('aria-hidden', 'true'); fila.appendChild(c); });
+    var vuelta = function () { return fila.children[originales.length].offsetLeft - originales[0].offsetLeft; };
+    var pos = 0, pausa = false, arrastre = null, reanudar;
+    var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ajustar = function () { var v = vuelta(); if (pos >= v) pos -= v; if (pos < 0) pos += v; fila.scrollLeft = pos; };
+    var esperar = function (ms) { pausa = true; clearTimeout(reanudar); reanudar = setTimeout(function () { pos = fila.scrollLeft; pausa = false; }, ms); };
+    (function paso() {
+      if (!pausa && !arrastre && !quieto) { pos += 0.5; ajustar(); }
+      requestAnimationFrame(paso);
+    })();
+    fila.addEventListener('mouseenter', function () { pausa = true; clearTimeout(reanudar); });
+    fila.addEventListener('mouseleave', function () { if (!arrastre) esperar(600); });
+    fila.addEventListener('touchstart', function () { pausa = true; clearTimeout(reanudar); }, { passive: true });
+    fila.addEventListener('touchend', function () { esperar(2500); });
+    fila.addEventListener('pointerdown', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      arrastre = { x: e.clientX, inicio: fila.scrollLeft };
+      fila.classList.add('arrastrando'); fila.setPointerCapture(e.pointerId);
+    });
+    fila.addEventListener('pointermove', function (e) {
+      if (!arrastre) return;
+      pos = arrastre.inicio - (e.clientX - arrastre.x); ajustar();
+    });
+    var soltar = function () { if (!arrastre) return; arrastre = null; fila.classList.remove('arrastrando'); pos = fila.scrollLeft; };
+    fila.addEventListener('pointerup', soltar);
+    fila.addEventListener('pointercancel', soltar);
+    fila.addEventListener('dragstart', function (e) { e.preventDefault(); });
     document.querySelectorAll('.flecha').forEach(function (b) {
       b.addEventListener('click', function () {
-        var paso = fila.querySelector('.trabajo').offsetWidth + 20;
-        fila.scrollBy({ left: paso * Number(b.getAttribute('data-dir')), behavior: 'smooth' });
+        var paso = originales[0].offsetWidth + 16;
+        esperar(1200);
+        pos = fila.scrollLeft + paso * Number(b.getAttribute('data-dir'));
+        if (pos < 0) { pos += vuelta(); fila.scrollLeft = pos + paso; }
+        fila.scrollTo({ left: pos, behavior: 'smooth' });
       });
     });
   }
