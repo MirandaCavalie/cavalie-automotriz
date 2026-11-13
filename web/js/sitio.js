@@ -10,7 +10,21 @@
     boton.addEventListener('click', function () {
       var abierto = menu.classList.toggle('abierto');
       boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
     });
+    // Al elegir una sección, se cierra el menú
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) { menu.classList.remove('abierto'); boton.setAttribute('aria-expanded', 'false'); }
+    });
+  }
+
+  // En la home la cabecera va transparente sobre la foto y se pinta de azul al bajar
+  var cabecera = document.querySelector('.inicio .cabecera');
+  if (cabecera) {
+    var pintar = function () { cabecera.classList.toggle('con-fondo', window.scrollY > 40 || (menu && menu.classList.contains('abierto'))); };
+    window.addEventListener('scroll', pintar, { passive: true });
+    if (boton) boton.addEventListener('click', pintar);
+    pintar();
   }
 
   // Cada clic a WhatsApp se envía a GTM como evento "whatsapp_click" (conversión de Ads/GA4)

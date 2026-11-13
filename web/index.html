@@ -125,13 +125,16 @@
         <img src="/img/logo-cavalie-blanco.svg" alt="Cavalié Automotriz" width="140" height="51">
       </a>
       <nav class="menu" aria-label="Principal">
-        <div class="menu__enlaces">
+        <div class="menu__enlaces" id="menu">
           <a href="/#servicios">Servicios</a>
           <a href="/#nosotros">Nosotros</a>
           <a href="/#trabajos">Trabajos</a>
           <a href="/#ubicacion">Ubicación</a>
         </div>
         <a class="boton boton--lima boton--chico" href="/#cotizar">Cotizar <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -140,6 +143,9 @@
     <!-- Portada -->
     <section class="hero">
       <img class="hero__foto" src="/img/hero-atencion-1520.webp" srcset="/img/hero-atencion-800.webp 800w, /img/hero-atencion-1520.webp 1520w" sizes="100vw" alt="Técnico de Cavalié conversando con un cliente al recibir su auto en el taller" width="1520" height="700" fetchpriority="high">
+      <div class="contenedor hero__arriba">
+        <p class="hero__frase">Transparencia<br> en cada&nbsp;servicio.</p>
+      </div>
       <div class="contenedor hero__abajo">
         <h1 class="oculto">Taller automotriz en Santa Beatriz, Lima. Mantenimiento de autos a GLP y gasolina, atendiendo desde&nbsp;1999.</h1>
         <a class="hero__nota" href="https://maps.google.com/?cid=8464895575291937233" target="_blank" rel="noopener"><span><svg class="ico-estrella" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg>4,8</span>+500 reseñas en Google</a>
