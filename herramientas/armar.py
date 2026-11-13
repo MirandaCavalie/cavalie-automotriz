@@ -34,9 +34,10 @@ PAGINAS = {
     },
     "/mantenimiento-glp/": {
         "archivo": "mantenimiento-glp.html",
-        "titulo": "Mantenimiento GLP en Lima para autos duales | Cavalié",
+        "titulo": "Mantenimiento GLP en Lima: taller BRC y Landi Renzo | Cavalié",
         "nombre": "Mantenimiento GLP",
-        "descripcion": "Mantenimiento GLP en Lima: filtros, reductor, inyectores, prueba de fugas y calibración. Especialistas en equipos BRC y Landi Renzo. Santa Beatriz.",
+        "descripcion": "Mantenimiento de GLP en Lima: filtros, reductor, inyectores, prueba de fugas y calibración con software. BRC, Landi Renzo y todas las marcas.",
+        "faq": True,
         "servicio": "Mantenimiento de sistema GLP",
         "prioridad": "0.9",
     },

@@ -230,6 +230,7 @@ strong { font-weight: 600; }
 
 /* Cómo funciona */
 .pasos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); border-top: 1px solid var(--linea-fuerte); }
+.pasos--cuatro { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .pasos li { padding: 28px 28px 8px 0; display: flex; flex-direction: column; gap: 14px; }
 .pasos .ico { width: 28px; height: 28px; color: var(--azul); }
 .pasos h3 { margin: 0; }
