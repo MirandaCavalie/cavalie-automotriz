@@ -1,71 +1,59 @@
-"""Genera web/img/logo-cavalie.svg y logo-cavalie-blanco.svg.
+"""Genera web/img/logo-cavalie.svg y logo-cavalie-blanco.svg vectorizando el logo original.
 
-Tipografía: Jost (SIL OFL) o TeX Gyre Adventor (GUST Font License), en
-assets-originales/fuentes/ (no se sube al repo). Las medidas salen del logo original
-ampliado 8x: cada elemento se escala y se ubica en la misma caja que ocupa en el original.
-Uso (requiere fonttools): python herramientas/logo.py adventor 0 0.8
-(fuente, peso si es Jost, compresión horizontal)
-Provisorio hasta tener el logo original en vector.
+Fuente: foto de perfil de la página de Facebook del taller (719x719 px, el logo mide
+~620 px de ancho), guardada en assets-originales/logo/logo-facebook-719.jpg (fuera del repo).
+Cada color (azul, tres verdes de la C y la hoja) se separa, se suaviza y se vectoriza con potrace.
+Uso (requiere pillow, numpy y potracer): python herramientas/logo.py
+Si llega el logo original en vector, reemplaza a este.
 """
-from fontTools.ttLib import TTFont
-from fontTools.pens.svgPathPen import SVGPathPen
-from fontTools.pens.transformPen import TransformPen
-from fontTools.pens.boundsPen import BoundsPen
+from PIL import Image, ImageFilter
+import numpy as np
+import potrace
 
-import sys
-from fontTools.varLib.instancer import instantiateVariableFont
-FUENTE = sys.argv[1] if len(sys.argv) > 1 else 'adventor'
-PESO = int(sys.argv[2]) if len(sys.argv) > 2 else 700
-if FUENTE == 'jost':
-    F = instantiateVariableFont(TTFont('assets-originales/fuentes/Jost-variable.ttf'), {'wght': PESO})
-else:
-    F = TTFont('assets-originales/fuentes/texgyreadventor-bold.otf')
-GS, CMAP, HM = F.getGlyphSet(), F.getBestCmap(), F['hmtx']
-BASE = 272                      # línea base en el original ampliado
+ORIGEN = 'assets-originales/logo/logo-facebook-719.jpg'
+CAJA = (40, 240, 680, 480)          # recorte alrededor del logo
+S = 4                               # sobremuestreo antes de vectorizar
 
-def caja(ch):
-    bp = BoundsPen(GS); GS[CMAP[ord(ch)]].draw(bp); return bp.bounds
+img = Image.open(ORIGEN).convert('RGB').crop(CAJA)
+big = np.asarray(img.resize((img.width * S, img.height * S), Image.LANCZOS)).astype(float)
+r, g, b = big[..., 0], big[..., 1], big[..., 2]
+tinta = (r + g + b) < 560
 
-K = float(sys.argv[3]) if len(sys.argv) > 3 else 0.8   # el logo original está comprimido en horizontal
+# Colores de referencia medidos en el original
+TONOS = {'verde_claro': (106, 176, 54), 'verde_medio': (66, 150, 40), 'verde_oscuro': (4, 116, 52), 'azul': (4, 28, 110)}
+centros = np.array(list(TONOS.values()), float)
+dist = ((big[..., None, :] - centros[None, None]) ** 2).sum(-1)
+clase = np.argmin(dist, -1)
 
-def trazo(ch, x, sx, sy, base):
-    pen = SVGPathPen(GS); GS[CMAP[ord(ch)]].draw(TransformPen(pen, (sx, 0, 0, -sy, x, base)))
-    return pen.getCommands()
+def suave(mask, rad=S * 0.9):
+    m = Image.fromarray((mask * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(rad))
+    return np.asarray(m) > 127
 
-def linea(texto, x0, x1, sy, base):
-    """Ubica el texto entre x0 y x1 (escala vertical sy, horizontal sy*K) repartiendo el espacio."""
-    sx = sy * K
-    anchos = [HM[CMAP[ord(c)]][0] * sx for c in texto]
-    b0, b1 = caja(texto[0]), caja(texto[-1])
-    natural = sum(anchos[:-1]) + b1[2] * sx - b0[0] * sx
-    extra = (x1 - x0 - natural) / (len(texto) - 1)
-    x = x0 - b0[0] * sx; d = []
-    for c, w in zip(texto, anchos):
-        d.append(trazo(c, x, sx, sy, base)); x += w + extra
-    print(texto, 'espacio entre letras', round(extra, 1))
+def trazar(mask):
+    curvas = potrace.Bitmap(~mask).trace(turdsize=60 * S, alphamax=1.0, opticurve=True, opttolerance=0.25)
+    d = []
+    for c in curvas:
+        p = c.start_point; d.append(f'M{p.x / S:.2f},{p.y / S:.2f}')
+        for sg in c.segments:
+            if sg.is_corner:
+                d.append(f'L{sg.c.x / S:.2f},{sg.c.y / S:.2f}L{sg.end_point.x / S:.2f},{sg.end_point.y / S:.2f}')
+            else:
+                d.append(f'C{sg.c1.x / S:.2f},{sg.c1.y / S:.2f} {sg.c2.x / S:.2f},{sg.c2.y / S:.2f} '
+                         f'{sg.end_point.x / S:.2f},{sg.end_point.y / S:.2f}')
+        d.append('Z')
     return ''.join(d)
 
-xh = F['OS/2'].sxHeight; cap = F['OS/2'].sCapHeight
-# Medidas del original (PNG de 200 px) x8, origen en x=35: ver comentarios
-# "C": caja x 16-224, y 24-288
-cb = caja('C'); sy = 264 / (cb[3] - cb[1]); sx = 208 / (cb[2] - cb[0])
-C = trazo('C', 16 - cb[0] * sx, sx, sy, 288 + cb[1] * sy)
-# "avalie": altura x 180, de x 240 a 1016, línea base 284
-resto = linea('avalie', 240, 1016, 180 / xh, 284)
-# AUTOMOTRIZ: altura 80, de x 456 a 1016, línea base 376
-auto = linea('AUTOMOTRIZ', 456, 1016, 80 / cap, 376)
-# hoja en lugar de la tilde: caja x 952-1028, y 14-98
-hoja = ('M956,96 C952,62 966,32 994,18 C1008,11 1018,12 1028,12 '
-        'C1029,36 1022,62 1002,78 C990,88 974,94 956,96 Z')
+capas = {n: trazar(suave(tinta & (clase == i))) for i, n in enumerate(TONOS)}
+ys, xs = np.where(tinta)
+vb = f'{xs.min() / S - 4:.0f} {ys.min() / S - 4:.0f} {(xs.max() - xs.min()) / S + 8:.0f} {(ys.max() - ys.min()) / S + 8:.0f}'
 
-VB = '8 4 1030 382'
-def svg(cC, cR, cA, cH, defs=''):
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{VB}" role="img" aria-label="Cavalié Automotriz">{defs}'
-            f'<path fill="{cC}" d="{C}"/><path fill="{cR}" d="{resto}"/>'
-            f'<path fill="{cA}" d="{auto}"/><path fill="{cH}" d="{hoja}"/></svg>')
+def svg(colores):
+    partes = ''.join(f'<path fill="{colores[n]}" d="{capas[n]}"/>' for n in TONOS)
+    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" role="img" aria-label="Cavalié Automotriz">{partes}</svg>'
 
-g = ('<defs><linearGradient id="v" x1="0" y1="0" x2="0" y2="1">'
-     '<stop offset="0" stop-color="#6BB138"/><stop offset="1" stop-color="#3E8E2C"/></linearGradient></defs>')
-open('web/img/logo-cavalie.svg', 'w').write(svg('url(#v)', '#0E1A6E', '#0E1A6E', 'url(#v)', g))
-open('web/img/logo-cavalie-blanco.svg', 'w').write(svg('#B9E07A', '#FFFFFF', '#FFFFFF', '#B9E07A'))
-print('ok', 'xh', xh, 'cap', cap)
+open('web/img/logo-cavalie.svg', 'w').write(svg({'verde_claro': '#6AB036', 'verde_medio': '#429628',
+                                                 'verde_oscuro': '#047434', 'azul': '#041C6E'}))
+# Versión para fondos oscuros: verdes en lima de la marca, azul en blanco
+open('web/img/logo-cavalie-blanco.svg', 'w').write(svg({'verde_claro': '#C8E68A', 'verde_medio': '#B9E07A',
+                                                        'verde_oscuro': '#A6D468', 'azul': '#FFFFFF'}))
+print('viewBox', vb, {n: len(d) for n, d in capas.items()})
