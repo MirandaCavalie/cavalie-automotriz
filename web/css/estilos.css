@@ -147,11 +147,17 @@ strong { font-weight: 600; }
 
 /* Nosotros: banda azul */
 .nosotros { background: var(--azul); color: var(--sobre-azul); padding: 96px 0; }
-.nosotros .etiqueta { color: var(--lima); }
-.nosotros__fila { display: flex; flex-wrap: wrap; gap: 48px; }
-.nosotros__col { flex: 1 1 280px; }
-.nosotros__foto { margin-top: 32px; width: 100%; max-width: 400px; aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--radio-chico); border: 1px solid rgba(255,255,255,.12); }
-.nosotros__texto { flex: 1.4 1 420px; }
+.nosotros__fila { display: grid; grid-template-columns: 1fr 1.25fr; gap: 64px; align-items: stretch; }
+.nosotros__col { position: relative; min-height: 360px; }
+/* La foto ocupa toda la altura de la columna, de margen a margen */
+.nosotros__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; border-radius: var(--radio); }
+.nosotros__texto { min-width: 0; }
+.nosotros__titulo { color: #fff; margin: 0 0 28px; }
+@media (max-width: 900px) {
+  .nosotros__fila { grid-template-columns: 1fr; gap: 40px; }
+  .nosotros__col { min-height: 0; }
+  .nosotros__foto { position: static; aspect-ratio: 5 / 3; height: auto; }
+}
 .nosotros__cita { margin: 0; font-size: clamp(1.35rem, 2.4vw, 1.9rem); line-height: 1.35; font-weight: 500; letter-spacing: -0.01em; color: #fff; }
 .nosotros__cita em { font-style: normal; color: var(--lima); }
 .nosotros__firma { margin: 20px 0 0; font-size: .875rem; font-weight: 600; letter-spacing: .04em; }
