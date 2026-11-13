@@ -25,7 +25,7 @@ PAGINAS = {
     "/": {
         "archivo": "inicio.html",
         "titulo": "Taller automotriz en Lima: mantenimiento GLP y gasolina | Cavalié",
-        "descripcion": "Taller automotriz y mecánico en Santa Beatriz, Lima, desde 1999. Mantenimiento de autos a GLP y gasolina en un solo lugar, todas las marcas. 4,8★ en Google.",
+        "descripcion": "Taller automotriz y mecánico en Santa Beatriz, Lima. Atendiendo desde 1999. Mantenimiento de autos a GLP y gasolina en un solo lugar, todas las marcas. 4,8★ en Google.",
         "portada": "hero-atencion",
         "prioridad": "1.0",
     },

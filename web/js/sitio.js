@@ -21,14 +21,13 @@
     }
   });
 
-  // Carrusel de reseñas: duplica las tarjetas para un recorrido continuo (se detiene al pasar el mouse)
-  var carrusel = document.getElementById('carrusel');
-  if (carrusel) {
+  // Carruseles continuos (reseñas y logos): duplica el contenido para un recorrido sin cortes
+  document.querySelectorAll('.carrusel').forEach(function (carrusel) {
     var pista = carrusel.querySelector('.carrusel__pista');
     Array.prototype.slice.call(pista.children).forEach(function (r) {
-      var copia = r.cloneNode(true); copia.setAttribute('aria-hidden', 'true'); pista.appendChild(copia);
+      var copia = r.cloneNode(true); copia.setAttribute('aria-hidden', 'true'); copia.setAttribute('alt', ''); pista.appendChild(copia);
     });
-  }
+  });
 
   // Trabajos realizados: flechas que deslizan la fila una foto a la vez
   var fila = document.getElementById('trabajos-fila');
