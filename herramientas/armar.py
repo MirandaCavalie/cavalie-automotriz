@@ -147,7 +147,8 @@ def armar(publicar=False):
                 .replace("{{ruta}}", ruta)
                 .replace("{{preload}}", precarga)
                 .replace("{{schema}}", "\n  ".join(ld(e) for e in esquemas))
-                .replace("{{contenido}}", contenido))
+                .replace("{{contenido}}", contenido)
+                .replace("<body>", '<body class="inicio">' if ruta == "/" else "<body>", 1))
         # marcar la página actual en el menú
         html = html.replace(f'<a href="{ruta}">', f'<a href="{ruta}" aria-current="page">', 1) if ruta != "/" else html
 
