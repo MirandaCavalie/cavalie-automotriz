@@ -113,17 +113,25 @@ def faq_desde_html(html):
 
 
 # Bloques de texto donde se evita la viuda (una palabra sola en la última línea)
-_BLOQUES = re.compile(r"(<(h[1-3]|p|li|dd|summary|blockquote|figcaption)\b[^>]*>)(.*?)(</\2>)", re.S)
+# Primero títulos y párrafos; luego los contenedores (li, dd...) que no tengan títulos o párrafos adentro
+_BLOQUES = re.compile(r"(<(h[1-3]|p|summary)\b[^>]*>)(.*?)(</\2>)", re.S)
+_CONTENEDORES = re.compile(r"(<(li|dd|blockquote|figcaption)\b[^>]*>)(.*?)(</\2>)", re.S)
+
+
+# Largo máximo (en letras) de las dos palabras unidas: más largo y desbordaría a 320 px
+_MAX_UNION = {"h1": 14, "h2": 20, "h3": 22}
 
 
 def sin_viudas(html):
     """Une las dos últimas palabras de cada bloque de texto con &nbsp;.
 
     Respaldo para navegadores sin `text-wrap: balance/pretty` (ver estilos.css).
-    En los títulos solo se unen si juntas son cortas, para que no desborden en celular.
+    En los títulos solo se unen si juntas caben en un celular de 320 px (ver _MAX_UNION).
     """
     def unir(m):
         apertura, etiqueta, interior, cierre = m.groups()
+        if re.search(r"<(h[1-6]|p|ul|ol)\b", interior):
+            return m.group(0)
         partes = re.split(r"(<[^>]+>)", interior)
         for i in range(len(partes) - 1, -1, -1):
             texto = partes[i]
@@ -138,12 +146,12 @@ def sin_viudas(html):
             ultima = re.sub(r"<[^>]+>", "", "".join(partes[i + 1:])).strip()
             ultimas = (recortado[pos + 1:] + ultima)
             penultima = recortado[:pos].rsplit(" ", 1)[-1]
-            if etiqueta.startswith("h") and len(penultima) + len(ultimas) > 14:
+            if len(penultima) + len(ultimas) > _MAX_UNION.get(etiqueta, 40):
                 break
             partes[i] = recortado[:pos] + "&nbsp;" + texto[pos + 1:]
             break
         return apertura + "".join(partes) + cierre
-    return _BLOQUES.sub(unir, html)
+    return _CONTENEDORES.sub(unir, _BLOQUES.sub(unir, html))
 
 
 def armar(publicar=False):
