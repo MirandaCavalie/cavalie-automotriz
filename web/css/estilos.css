@@ -52,7 +52,7 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--azul); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--azul-hover); }
-h1, h2, h3 { font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 .5em; color: var(--tinta); }
+h1, h2, h3 { text-wrap: balance; font-weight: 600; line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 .5em; color: var(--tinta); }
 /* Tamaños fluidos: crecen con el ancho de pantalla, sin saltos entre celular y escritorio */
 h1 { font-size: clamp(1.9rem, 1.2rem + 4vw, 4rem); }
 h2 { font-size: clamp(1.6rem, 1.25rem + 2vw, 3rem); }
@@ -85,7 +85,7 @@ strong { font-weight: 600; }
 
 /* Cabecera de sección: título a la izquierda, controles a la derecha */
 .cabeza { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 56px; }
-.cabeza h2 { margin: 0; max-width: 640px; }
+.cabeza h2 { margin: 0; }
 .cabeza--abajo { align-items: flex-end; }
 
 /* Botones */
@@ -237,7 +237,7 @@ strong { font-weight: 600; }
 /* Reseñas: banda azul con carrusel continuo */
 .resenas { background: var(--azul); color: #fff; padding: 112px 0; }
 .resenas__cabeza { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; margin-bottom: 56px; }
-.resenas__cabeza h2 { color: #fff; margin: 0; max-width: 520px; }
+.resenas__cabeza h2 { color: #fff; margin: 0; }
 .resenas__resumen { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 32px; }
 .resenas__nota { display: flex; align-items: center; gap: 16px; padding-right: 32px; border-right: 1px solid rgba(255,255,255,.18); }
 .resenas__numero { font-size: 3.5rem; line-height: 1; font-weight: 600; letter-spacing: -0.04em; color: var(--lima); }
@@ -346,7 +346,7 @@ strong { font-weight: 600; }
 .pie a { color: var(--sobre-pie); text-decoration: none; }
 .pie a:hover { color: #fff; text-decoration: underline; }
 .pie__llamado { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,.18); }
-.pie__llamado h2 { margin: 0; max-width: 720px; color: #fff; }
+.pie__llamado h2 { margin: 0; max-width: 900px; color: #fff; }
 .pie__llamado h2 span { display: block; color: var(--lima); } /* el llamado va en su propia línea, siempre */
 .pie .pie__llamado .boton { color: var(--tinta); }
 .pie .pie__llamado .boton:hover { color: var(--tinta); text-decoration: none; }
